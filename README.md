@@ -6,19 +6,16 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+_____ is a web application inspired by Medium built using Ruby on Rails
+and React.js. ______ allows users to:
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags and search notes by tag
-- [ ] Search through notes for blocks of text
-- [ ] Apply complex styling to notes while editing
-- [ ] Set reminders on notes
+- [ ] Create, read, edit, delete stories
+- [ ] Recommend, Bookmark, and Comment on stories.
+- [ ] Tag Stories with multiple tags
+- [ ] Follow both Users and Tags
 
 ## Design Docs
 * [View Wireframes][view]
@@ -64,7 +61,7 @@ extend this to a fuzzy search through every Note's content.
 
 ### Phase 4: Allow Complex Styling in Notes (1 day)
 
-Using quill.js, allow for complex styling of notes. 
+Using quill.js, allow for complex styling of notes.
 
 [Details][phase-four]
 
