@@ -18,9 +18,9 @@
 ## Component Heirarchy
 ![component-heirarchy]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
+[new-user]: ./wireframes/new_user_page.png
+[new-session]: ./wireframes/new_session_page.png
 [notes]: ./wireframes/root_notes.png
 [notebooks]: ./wireframes/root_notebooks.png
 [notebook-form]: ./wireframes/notebook_form.png
-[component-heirarchy]: ./wireframes/component_heirarchy.png
+[component-heirarchy]: ./wireframes/components.png

@@ -37,6 +37,7 @@ component. There will also be a fully featured JSON api that supports managing s
 
 ### Phase 2: Flux Architecture and Story CRUD (2.5 days)
 
+In phase two the primary focus will be to 
 Phase 2 is focused on setting up Flux, the React Router, and the React view
 structure for the main application. After the basic Flux architecture has been
 set up, a Note store will be implemented and a set of actions corresponding to
