@@ -30,7 +30,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 
-##bookmarks
+##bookmarks (pending feature)
 column name  | data type | details
 -------------|-----------|-----------------------
 id           | integer   | not null, primary key

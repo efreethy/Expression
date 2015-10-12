@@ -1,4 +1,4 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+# Phase 2: ### Phase 2: React Router and Flux (2.5 days)
 
 ## Rails
 ### Models
@@ -9,24 +9,24 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* Navbar
+* LandingPage
+  * Story Feed
 
 ### Stores
-* Note
+* Story
 
 ### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
+* ApiActions.receiveAllStories
+* ApiActions.receiveSingleStory
+* ApiActions.deleteStory
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllStories
+* ApiUtil.fetchSingleStory
+* ApiUtil.createStory
+* ApiUtil.editStory
+* ApiUtil.destroyStory
 
 ## Gems/Libraries
 * Flux Dispatcher

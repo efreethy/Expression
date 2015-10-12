@@ -1,35 +1,28 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5:  Followings (1 day)
 
 ## Rails
 ### Models
-* Reminder
+* Followings
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+* Api::FollowingsController (create, destroy, index, show
 
 ### Views
-* reminders/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* UserHeaderBar
 
 ### Stores
-* Reminder
 
 ### Actions
-* ApiActions.receiveAllReminders
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
+* ApiActions.receiveAllFollowings
+* ApiActions.receiveSingleFollowing
+* ApiActions.deleteFollowing
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
+* ApiUtil.countAllFollowers
+* ApiUtil.createFollowing
+* ApiUtil.destroyFollowing
 
 ## Gems/Libraries

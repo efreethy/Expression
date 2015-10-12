@@ -26,71 +26,60 @@ and React.js. Expression allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Story Model (1.5 days)
+### Phase 1: Authentication and fleshing out core models: User / Story / Tag (1.5 days)
 
-Phase one begins with setting up a basic user authentication system. Upon a successful
-sign in, users will be directed to a landing page containing the applications root
-component. There will also be a fully featured JSON api that supports managing stories.
-
+Phase one begins with setting up a basic user authentication system. This includes standard .html.erb views
+for both sign in and sign up. The User / Story association should be established. A tag model will be created. Both the Story and Tag models should support a JSON api.
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Story CRUD (2.5 days)
+### Phase 2: React Router and Flux (2.5 days)
 
-In phase two the primary focus will be to 
-Phase 2 is focused on setting up Flux, the React Router, and the React view
-structure for the main application. After the basic Flux architecture has been
-set up, a Note store will be implemented and a set of actions corresponding to
-the needed CRUD functionality created. Once this is done, I will create React
-views for the Notes `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Notes can be created, read, edited and destroyed in the browser. Notes should
-save to the database when the form loses focus or is left idle after editing.
-Lastly, while constructing the views I will start using basic bootstrap for
-styling.
+Phase two is concerned with setting up the React Router and Flux pattern within my application. This
+means establishing the initial component hierarchy that the rest of the application will build off of. By the
+end of this phase I should have a functioning routers that matches paths for the LandingPage and  UserPage  component-views. There should be a bare-bones functioning navbar for login / logout.
 
 [Details][phase-two]
 
-### Phase 3: Notebooks and Tags (2 days)
+### Phase 3: StoryForm  Component / UserPage (1.5 day)
+The landing page will feature a story form that will allow the user to publish stories (no tags yet). Users should be able to see a list of stories they have written via an option in the navbar.
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook, which has
-its own `Index` view. Create JSON API for Notebooks. Notes can also now be
-tagged with multiple tags. Users can bring up notes in a separate `SearchIndex`
-view by searching for their tags. Once the tag search is implemented, I will
-extend this to a fuzzy search through every Note's content.
 
 [Details][phase-three]
 
-### Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: UserTagging / StoryTagging (2 days)
 
-Using quill.js, allow for complex styling of notes.
+This phase is concerned with creating a feature for users to tag the stories they create, and also
+follow tags of the topics that they enjoy. There should be a
 
 [Details][phase-four]
 
-### Phase 5: Reminders and Garbage Collection (1 day)
+### Phase 5: Followings (1 day)
 
-Phase 5 introduces two new features. First, users can set reminders on notes
-which will at the time they are set for prompt the user to review and edit the
-given note. In addition, I will implement a feature that asks users to review
-notes once they reach a certain age and ask whether they should be kept,
-archived, or deleted.
-
+The goal of phase five is to implement a feature for users to follow other users. This means creating a Followings model, and adding follow-buttons to the user show page.
 [Details][phase-five]
 
-### Phase 6: Styling Cleanup and Seeding (1 day)
+### Phase 6: Recommendations (1 day)
 
-Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
+The Recommendations feature is much like 'favoriting' or 'liking' a post.  Users shoud be able to recommend stories that they enjoy, and this will appear in a recommendations list on their page. This list will appear in the UserPage's StoryFeed.
+
+[Details][phase-six]
+
+### Phase 7: Responses and SearchBar (1 day)
+
+This phase is concerned with including a responses (comments) feature into the application - enabling users to provide feedback on stories.
+[Details][phase-seven]
 
 ### Bonus Features (TBD)
-- [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Changelogs for Notes
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Multiple sessions
+- [ ] User Statistics
+- [ ] Publications
+- [ ] Bookmarks
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
+[phase-seven]: ./docs/phases/phase7.md
