@@ -14,7 +14,7 @@
 * StoriesIndex
 
 ### Stores
-* Reminder
+* Recommendations
 
 ### Actions
 * ApiActions.receiveAllRecommendations

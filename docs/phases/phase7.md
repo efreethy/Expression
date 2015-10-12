@@ -14,7 +14,7 @@
 * SearchBar
 
 ### Stores
-* Reminder
+* Responses
 
 ### Actions
 * ApiActions.receiveAllResponses
