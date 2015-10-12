@@ -50,7 +50,8 @@ The landing page will feature a story form that will allow the user to publish s
 ### Phase 4: UserTagging / StoryTagging (2 days)
 
 This phase is concerned with creating a feature for users to tag the stories they create, and also
-follow tags of the topics that they enjoy. There should be a
+follow tags of the topics that they enjoy. These will be used in drawing from a users tag subscriptions, and also in
+generating their initial feed.
 
 [Details][phase-four]
 
