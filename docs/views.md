@@ -6,21 +6,25 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Story Form
+![story-form]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## LandingPageStoryForm / StoryFeed / StoryFeedItem / SearchBar / TagsIndex
+![landingpage]
 
-## NoteBookForm
-![notebook-form]
+## UserPage/ UserHeaderbar / StoriesIndex
+![userpage]
 
-## Component Heirarchy
-![component-heirarchy]
+## StoryPage / Responses / Response Form / Reading List
+![storypage]
+
+## Component Tree
+![component-tree]
 
 [new-user]: ./wireframes/new_user_page.png
 [new-session]: ./wireframes/new_session_page.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
-[component-heirarchy]: ./wireframes/components.png
+[story-form]: ./wireframes/story_form.png
+[landingpage]: ./wireframes/landing_page.png
+[userpage]: ./wireframes/user_page.png
+[storypage]: ./wireframes/story_page.png
+[component-tree]: ./wireframes/component_tree.png
