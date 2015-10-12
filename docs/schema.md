@@ -8,7 +8,7 @@ title       | string    | not null
 body        | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 
-## storytaggings 
+## storytaggings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -16,7 +16,7 @@ name        | string    | not null
 story_id    | integer   | not null, foreign key (references stories), indexed, unique [tag_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
 
-## usertaggings (users can  subscribe to tags)
+## usertaggings (users may subscribe to tags)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

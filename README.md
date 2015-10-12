@@ -1,4 +1,4 @@
-# FresherNote
+# Expression
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -6,8 +6,8 @@
 
 ## Minimum Viable Product
 
-_____ is a web application inspired by Medium built using Ruby on Rails
-and React.js. ______ allows users to:
+Expression is a web application inspired by Medium built using Ruby on Rails
+and React.js. Expression allows users to:
 
 
 - [ ] Create an account
@@ -26,16 +26,16 @@ and React.js. ______ allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)
+### Phase 1: User Authentication, Story Model (1.5 days)
 
-In Phase 1, I will begin by implementing user signup and authentication (using
-BCrypt). There will be a basic landing page after signup that will contain the
-container for the application's root React component. Before building out the
-front end, I will begin by setting up a full JSON API for Notes.
+Phase one begins with setting up a basic user authentication system. Upon a successful
+sign in, users will be directed to a landing page containing the applications root
+component. There will also be a fully featured JSON api that supports managing stories.
+
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Note CRUD (2.5 days)
+### Phase 2: Flux Architecture and Story CRUD (2.5 days)
 
 Phase 2 is focused on setting up Flux, the React Router, and the React view
 structure for the main application. After the basic Flux architecture has been
