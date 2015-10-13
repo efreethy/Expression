@@ -1,6 +1,8 @@
 (function(root) {
 
   root.Navbar = React.createClass({
+
+
     getInitialState: function () {
       return {username: ""};
     },
@@ -19,6 +21,14 @@
 
     handleSignOutClick: function () {
 
+      $.ajax({
+        type: "DELETE",
+        url: "/session",
+        dataType: "json",
+        success: function(result) {
+            document.location ='/';
+        }
+      });
     },
 
     render: function () {
@@ -43,7 +53,7 @@
               <div className="form-group">
                 <input type="text" className="form-control" placeholder="Search Expression"/>
               </div>
-              <button type="submit" className="btn btn-default">Submit</button>
+              <button type="submit" className="btn btn-default">Search</button>
             </form></li>
               <li><a href="#">Write a Story</a></li>
             <li className="dropdown">
@@ -51,7 +61,7 @@
               <ul className="dropdown-menu">
                 <li><a href="#">Profile</a></li>
                 <li role="separator" className="divider"></li>
-                <li><a href="#" onClick={this.handleSignOutClick}>Sign Out</a></li>
+                <li onClick={this.handleSignOutClick}><a href="#">Sign Out</a></li>
               </ul>
             </li>
           </ul>
