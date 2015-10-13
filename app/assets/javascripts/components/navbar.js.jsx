@@ -1,7 +1,7 @@
 (function(root) {
 
   root.Navbar = React.createClass({
-
+    mixins: [ReactRouter.History],
 
     getInitialState: function () {
       return {username: ""};
@@ -17,6 +17,10 @@
           that.setState({username: result.username});
         }
       });
+    },
+
+    handleClickToProfile: function () {
+        this.history.pushState(null, 'users/' + root.CURRENT_USER_ID);
     },
 
     handleSignOutClick: function () {
@@ -59,9 +63,9 @@
             <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}<span className="caret"></span></a>
               <ul className="dropdown-menu">
-                <li><a href="#">Profile</a></li>
+                <li onClick={this.handleClickToProfile} ><a href="javascript:void(0)">Profile</a></li>
                 <li role="separator" className="divider"></li>
-                <li onClick={this.handleSignOutClick}><a href="#">Sign Out</a></li>
+                <li onClick={this.handleSignOutClick}><a href="javascript:void(0)">Sign Out</a></li>
               </ul>
             </li>
           </ul>

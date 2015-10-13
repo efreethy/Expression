@@ -3,3 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.landing-page-container {
+  position: relative;
+  border: 1px solid green;
+  min-width: 300px;
+}
+
+.landing-page-container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.landing-feed {
+  width: 552px;
+  height: 1000px;
+  border: 1px solid blue;
+  margin: auto
+}
+.landing-page-left {
+  float: left;
+  // border: solid black 2px;
+  width: 60%;
+
+}
+.landing-page-right {
+  float: right;
+  right: 0px;
+  width: 360px;
+  background-color: #FAFAFA;
+  height: 800px;
+
+  border: solid black 2px;
+  border: solid black 2px;
+}
