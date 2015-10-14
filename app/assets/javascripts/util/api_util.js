@@ -21,5 +21,20 @@ var ApiUtil = {
         ApiActions.receiveAll(stories);
       }
     });
+  },
+
+  createStory: function (postTitle, bodyHtml) {
+    debugger;
+    $.ajax({
+      type: "POST",
+      url: "/api/users/"+CURRENT_USER_ID+'/stories',
+      dataType: "json",
+      data: {story: { title: postTitle, body: bodyHtml }},
+      success: function (data) {
+        console.log(data);
+        ApiActions.receiveSingleStory(data);
+      }
+    });
   }
+
 };

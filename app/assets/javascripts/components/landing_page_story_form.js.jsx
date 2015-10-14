@@ -19,10 +19,9 @@
     },
 
     handlePublishClick: function () {
-
       var postTitle = $('.landing-page-post-title')[0].value
       var bodyHtml = $('.editable').html();
-        debugger;
+      ApiUtil.createStory(postTitle, bodyHtml);
     },
 
     render: function () {

@@ -5,6 +5,11 @@
     _stories = stories;
   };
 
+
+  var _addAuthorStory = function (story) {
+    _stories.push(story);
+  };
+
   var CHANGE_EVENT = 'change';
 
   root.StoryStore = $.extend({}, EventEmitter.prototype, {
@@ -16,6 +21,11 @@
      switch (payload.actionType) {
        case StoryConstants.AUTHOR_STORIES_RECEIVED:
        _resetAuthorStories(payload.data);
+       StoryStore.emit(CHANGE_EVENT);
+       break;
+       case StoryConstants.STORY_CREATED:
+       debugger;
+       _addAuthorStory(payload.data);
        StoryStore.emit(CHANGE_EVENT);
        break;
      }

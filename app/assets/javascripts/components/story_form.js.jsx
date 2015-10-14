@@ -14,16 +14,7 @@
     handlePublishClick: function () {
       var postTitle = $('.post-title')[0].value;
       var bodyHtml = $('.editable').html();
-
-      $.ajax({
-        type: "POST",
-        url: "/api/users/"+root.CURRENT_USER_ID+'/stories',
-        dataType: "json",
-        data: {story: { title: postTitle, body: bodyHtml }},
-        success: function (data) {
-          console.log(data);
-        }
-      });
+      ApiUtil.createStory(postTitle, bodyHtml, CURRENT_USER_ID);
     },
 
     render: function () {
