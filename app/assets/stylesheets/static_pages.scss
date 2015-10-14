@@ -129,3 +129,40 @@ textarea {
   border: 1px solid blue;
   width: 700px;
 }
+
+.user-prof-page {
+    border: 1px solid purple;
+    width: 550px;
+    margin: auto;
+}
+
+.profile-page-hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+.single-story-hr {
+  color: #f00;
+  background-color: #eee;
+  height: 2px;
+}
+
+.latest-stories-block {
+  margin-top: -20px;
+  margin-left: 225px;
+  background-color: white;
+  width: 112px;
+  // margin: auto;
+  border: solid #000 2px;
+  color: #000000;
+  font-size: 13px;
+}
+
+div.story-content {
+  font-family: 'Lora', serif;
+  font-size: 35px;
+}

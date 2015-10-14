@@ -24,7 +24,7 @@ var ApiUtil = {
   },
 
   createStory: function (postTitle, bodyHtml) {
-    debugger;
+
     $.ajax({
       type: "POST",
       url: "/api/users/"+CURRENT_USER_ID+'/stories',
@@ -35,6 +35,10 @@ var ApiUtil = {
         ApiActions.receiveSingleStory(data);
       }
     });
+  },
+
+  fetchSingleUser: function (user_id) {
+
   }
 
 };

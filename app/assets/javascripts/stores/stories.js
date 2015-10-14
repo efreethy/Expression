@@ -1,32 +1,36 @@
 (function(root){
-  var _stories = [];
+  var _authorStories = [];
   var _resetAuthorStories = function (stories) {
 
-    _stories = stories;
+    _authorStories = stories;
   };
 
 
   var _addAuthorStory = function (story) {
-    _stories.push(story);
+    _authorStories.push(story);
   };
 
-  var CHANGE_EVENT = 'change';
+  var AUTHOR_STORIES_INDEX_CHANGE_EVENT = 'authorStoriesIndexChange';
+  var SINGLE_AUTHOR_STORY_CHANGE_EVENT = 'singleAuthorStoryChange';
 
   root.StoryStore = $.extend({}, EventEmitter.prototype, {
-    all: function(){
-      return _stories.slice(0);
+    addAuthorStoriesIndexChangeListener: function (cb) {
+      StoryStore.on(AUTHOR_STORIES_INDEX_CHANGE_EVENT, cb);
+    },
+
+    allAuthorStories: function(){
+      return _authorStories.slice(0);
     },
 
     dispatcherID: AppDispatcher.register(function(payload) {
      switch (payload.actionType) {
        case StoryConstants.AUTHOR_STORIES_RECEIVED:
        _resetAuthorStories(payload.data);
-       StoryStore.emit(CHANGE_EVENT);
+       StoryStore.emit(AUTHOR_STORIES_INDEX_CHANGE_EVENT);
        break;
        case StoryConstants.STORY_CREATED:
-       debugger;
        _addAuthorStory(payload.data);
-       StoryStore.emit(CHANGE_EVENT);
+       StoryStore.emit(SINGLE_AUTHOR_STORY_CHANGE_EVENT);
        break;
      }
    })
