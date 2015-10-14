@@ -19,6 +19,10 @@
       });
     },
 
+    handleWriteStoryClick: function () {
+      this.history.pushState(null, 'stories/new');
+    },
+
     handleClickToProfile: function () {
         this.history.pushState(null, 'users/' + root.CURRENT_USER_ID);
     },
@@ -49,7 +53,7 @@
 
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav">
-            <li><a href="#">Home</a></li>
+            <li ><Link to={`/`}>Home</Link></li>
           </ul>
 
           <ul className="nav navbar-nav navbar-right">
@@ -59,7 +63,7 @@
               </div>
               <button type="submit" className="btn btn-default">Search</button>
             </form></li>
-              <li><a href="#">Write a Story</a></li>
+              <li onClick={this.handleWriteStoryClick}><a href="javascript:void(0)">Write a Story</a></li>
             <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}<span className="caret"></span></a>
               <ul className="dropdown-menu">

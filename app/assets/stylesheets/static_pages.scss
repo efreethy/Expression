@@ -4,10 +4,60 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+div.editable
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+
+
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  background: transparent;
+  color: black;
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  width: auto;
+  display: inline-block;
+}
+
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  background: transparent;
+  color: black;
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  width: auto;
+  display: inline-block;
+
+}
+
 .landing-page-container {
   position: relative;
   border: 1px solid green;
   min-width: 300px;
+}
+
+// for visibility only
+.landing-page-story-form {
+  border: 1px solid purple;
 }
 
 .landing-page-container:after {
@@ -23,6 +73,7 @@
 }
 .landing-page-left {
   float: left;
+
   // border: solid black 2px;
   width: 60%;
 
@@ -36,4 +87,45 @@
 
   border: solid black 2px;
   border: solid black 2px;
+}
+
+
+.landing-page-post-title {
+  width: 320px;
+  font-family: 'Lora', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+  top: 50%;
+  left: 27%;
+}
+
+.post-title {
+  float: left;
+}
+
+.landing-page-post-body {
+  width: 420px;
+  max-width: 420px;
+  font-size: 15px;
+  color: black;
+  top: 50%;
+  left: 27%;
+}
+
+.editable.story-content {
+  font-family: 'Lora', serif;
+  text-align: left;
+}
+.editable.story-content.story-body {
+  font-size: 20px;
+}
+
+.story-form-container {
+  font-family: 'Lora', serif;
+  text-align: center;
+  font-size: 30px;
+  margin: auto;
+  border: 1px solid blue;
+  width: 700px;
 }
