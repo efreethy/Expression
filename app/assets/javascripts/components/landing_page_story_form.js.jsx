@@ -31,7 +31,7 @@
                   onChange={this.onTitleChange} placeholder="Title" value={this.state.title}/>
 
          <div className="editable landing-page-post-body story-content"  >
-            Body
+            Body...
          </div>
 
           <br/>

@@ -20,7 +20,9 @@ $(function () {
         <Route path="/" component={App}>
           <IndexRoute component={LandingPage}/>
           <Route path="users/:id" component={UserPage}></Route>
+          <Route path="users/:user_id/stories/:id" component={StoryShowPage}></Route>
           <Route path="stories/new" component={StoryForm}></Route>
+
         </Route>
       );
 

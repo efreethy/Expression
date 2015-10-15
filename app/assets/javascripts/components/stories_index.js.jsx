@@ -10,6 +10,11 @@
       StoryStore.addAuthorStoriesIndexChangeListener(this._onChange);
     },
 
+    componentWillUnmount: function () {
+      ApiUtil.fetchAuthorStories(this.props.author_id);
+      StoryStore.removeAuthorStoriesIndexChangeListener(this._onChange);
+    },
+
     _onChange: function () {
 
       this.setState({ authorStories: StoryStore.allAuthorStories() });
@@ -18,7 +23,7 @@
     render: function () {
 
       var authorStories = this.state.authorStories.map(function (story) {
-        return <StoryIndexItem story={story} />
+        return <StoryIndexItem key={story.id} story={story} />
       });
 
       return (

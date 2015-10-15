@@ -3,11 +3,12 @@ class Api::StoriesController < ApplicationController
   def index
     author_id = params[:author_id].to_i
     @stories = Story.where(author_id: author_id)
-    render json: @stories
   end
 
   def show
+
     story_id = params[:id]
+    @story = Story.find(story_id)
   end
 
   def create

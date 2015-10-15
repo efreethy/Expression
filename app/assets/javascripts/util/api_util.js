@@ -6,6 +6,7 @@ var ApiUtil = {
       dataType: 'JSON',
       data: {author_id: author_id},
       success: function (authorStories) {
+
         ApiActions.receiveAll(authorStories);
       }
     });
@@ -16,9 +17,8 @@ var ApiUtil = {
       url: '/api/users/' + author_id + '/stories/' + story_id,
       method: 'GET',
       dataType: 'JSON',
-      success: function (stories) {
-        console.log(story);
-        ApiActions.receiveAll(stories);
+      success: function (story) {
+        ApiActions.receiveSingleStory(story);
       }
     });
   },
@@ -31,7 +31,6 @@ var ApiUtil = {
       dataType: "json",
       data: {story: { title: postTitle, body: bodyHtml }},
       success: function (data) {
-        console.log(data);
         ApiActions.receiveSingleStory(data);
       }
     });

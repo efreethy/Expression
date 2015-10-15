@@ -1,26 +1,28 @@
 (function (root) {
 
   root.StoryIndexItem = React.createClass({
+    mixins: [ReactRouter.History],
+
     getInitialState: function () {
       return {title: this.props.story.title, body: this.props.story.body};
     },
 
-    componentWillMount: function () {
+    handleClickToStoryShow: function () {
 
-    },
-
-    _onChange: function () {
-
+      this.history.pushState(null, 'users/' + this.props.story.author_id +'/stories/' + this.props.story.id);
     },
 
     render: function () {
       return (
-        <div className="story-content">
-          <h2>{this.state.title}</h2>
+        <div>
+          
+          <div className="story-content story-index-item" onClick={this.handleClickToStoryShow}>
+            <h2>{this.state.title}</h2>
 
-            <div dangerouslySetInnerHTML={{__html: this.state.body}} />
-        
-          <hr className="single-story-hr"/>
+              <div dangerouslySetInnerHTML={{__html: this.state.body}} />
+
+            <hr className="single-story-hr"/>
+          </div>
         </div>
       );
     }

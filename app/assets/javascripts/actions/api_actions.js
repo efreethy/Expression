@@ -8,7 +8,7 @@ var ApiActions = {
 
   receiveSingleStory: function(story){
     AppDispatcher.dispatch({
-      actionType: StoryConstants.STORY_CREATED,
+      actionType: StoryConstants.STORY_RECIEVED,
       data: story
     });
   }
