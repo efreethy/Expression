@@ -13,6 +13,14 @@
 class Story < ActiveRecord::Base
   validates :title, :author_id, :title, presence: true
 
+  has_many :story_taggings
+  
+  has_many(
+    :tags,
+    through: :story_taggings,
+    source: :tag
+  )
+
   belongs_to(
     :author,
     class_name: "User",

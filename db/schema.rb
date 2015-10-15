@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013224331) do
+ActiveRecord::Schema.define(version: 20151015182143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,23 @@ ActiveRecord::Schema.define(version: 20151013224331) do
 
   add_index "stories", ["author_id"], name: "index_stories_on_author_id", using: :btree
   add_index "stories", ["title"], name: "index_stories_on_title", using: :btree
+
+  create_table "story_taggings", force: :cascade do |t|
+    t.integer  "story_id",   null: false
+    t.integer  "tag_id",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "story_taggings", ["story_id", "tag_id"], name: "index_story_taggings_on_story_id_and_tag_id", unique: true, using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

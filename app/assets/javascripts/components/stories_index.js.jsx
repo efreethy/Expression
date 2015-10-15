@@ -29,7 +29,7 @@
       return (
       <div >
         <p className="latest-stories-block">LATEST STORIES</p>
-        <h1>Stories Index</h1>
+    
         {authorStories}
       </div>
       );

@@ -1,4 +1,6 @@
 var ApiUtil = {
+
+
   fetchAuthorStories: function (author_id) {
     $.ajax({
       url: '/api/users/' + author_id +'/stories',
@@ -23,15 +25,16 @@ var ApiUtil = {
     });
   },
 
-  createStory: function (postTitle, bodyHtml) {
+  createStory: function (postTitle, bodyHtml, tagsArray) {
 
     $.ajax({
       type: "POST",
       url: "/api/users/"+CURRENT_USER_ID+'/stories',
       dataType: "json",
-      data: {story: { title: postTitle, body: bodyHtml }},
+      data: {story: { title: postTitle, body: bodyHtml, tags: tagsArray}},
       success: function (data) {
         ApiActions.receiveSingleStory(data);
+        
       }
     });
   },

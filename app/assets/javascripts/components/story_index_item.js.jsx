@@ -4,6 +4,7 @@
     mixins: [ReactRouter.History],
 
     getInitialState: function () {
+
       return {title: this.props.story.title, body: this.props.story.body};
     },
 
@@ -13,13 +14,13 @@
     },
 
     render: function () {
+      
       return (
         <div>
-          
+
           <div className="story-content story-index-item" onClick={this.handleClickToStoryShow}>
             <h2>{this.state.title}</h2>
 
-              <div dangerouslySetInnerHTML={{__html: this.state.body}} />
 
             <hr className="single-story-hr"/>
           </div>

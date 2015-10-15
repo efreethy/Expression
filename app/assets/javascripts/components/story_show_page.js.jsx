@@ -2,7 +2,8 @@
 
   root.StoryShowPage = React.createClass({
     getInitialState: function () {
-      return {story: {id: "", title: "", body: "", created_at: "", authorName: "", }};
+
+      return {story: {id: "", title: "", body: "", created_at: "", authorName: "", tags: []}};
     },
 
     componentWillMount: function () {
@@ -20,6 +21,8 @@
 
     render: function () {
 
+      var tags = this.state.story.tags.map(function (tag) {return tag.name});
+
       return (
         <div className="story-show-page">
           <StoryBadge story={this.state.story} />
@@ -27,7 +30,10 @@
              <h2>{this.state.story.title}</h2>
               <div dangerouslySetInnerHTML={{__html: this.state.story.body}} />
              </div>
+            <StoryTags tags={tags}/>
         </div>
+
+
       );
     }
   });

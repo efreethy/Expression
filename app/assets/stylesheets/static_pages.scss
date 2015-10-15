@@ -180,14 +180,25 @@ div.story-content {
   font-size: 18px;
 }
 
-.story-index-item:hover {
-  cursor: pointer;
-  transition: .7s;
+.story-index-item {
+  padding-top: 5px;
+
+  margin-top: -20px;
 }
 
 .story-index-item:hover {
-  background-color: #E6FFFF;
+  cursor: pointer;
   transition: .7s;
+
+}
+
+.story-index-item:hover {
+  h2 {
+    color: green;
+    transition: .3s;
+  }
+  background-color: #E8F7E9;
+    transition: .3s;
 }
 .publish-tags-containter:before {
   content: "";
@@ -200,4 +211,20 @@ div.story-content {
 .story-form-publish-btn {
   float: left;
   left: 75px;
+}
+
+.tag-item {
+  background-color: #FAFAFA;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 1px 10px 1px 10px;
+  display:inline-block;
+  text-align:center;
+  border: solid 1px #BDB090;
+  border-radius: 3px;
+}
+.tag-item:hover {
+  color: #009B0A;
+  background-color: #EAF3EC;
+  border: solid 1px #47BC76;
 }

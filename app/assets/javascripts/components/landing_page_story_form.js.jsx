@@ -21,7 +21,9 @@
     handlePublishClick: function () {
       var postTitle = $('.landing-page-post-title')[0].value
       var bodyHtml = $('.editable').html();
-      ApiUtil.createStory(postTitle, bodyHtml);
+      var tagsArray = $('#tag-adder').tokenize().toArray();
+
+      ApiUtil.createStory(postTitle, bodyHtml, tagsArray);
     },
 
     render: function () {
