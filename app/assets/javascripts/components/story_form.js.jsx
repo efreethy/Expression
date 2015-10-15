@@ -20,17 +20,25 @@
     render: function () {
 
       return (
-        <div className="story-form-container">
-          Post a Story
-          <br/>
-          <input type="text" className="post-title story-content"
-                  placeholder="Title"/>
-          <br/>
-          <div className="editable story-content story-body" >
-            Body..
+        <div>
+          <div className="story-form-container">
+            Post a Story
+            <br/>
+            <input type="text" className="post-title story-content"
+                    placeholder="Title"/>
+            <br/>
+            <div className="editable story-content story-body" >
+              Body..
             </div>
-            <button onClick={this.handlePublishClick} type="submit" className="btn btn-success">Publish</button>
-        </div>
+
+              <div className='publish-tags-container'>
+                <button onClick={this.handlePublishClick} type="submit" className="btn btn-success story-form-publish-btn">Publish</button>
+              
+              </div>
+          </div>
+            <TagAdder />
+            </div>
+
         );
       }
   });

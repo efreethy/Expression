@@ -35,8 +35,10 @@
          </div>
 
           <br/>
-          <button onClick={this.handlePublishClick} type="submit" className="btn btn-success">Publish</button>
-
+          <div className='publish-tags-container'>
+            <button onClick={this.handlePublishClick} type="submit" className="btn btn-success story-form-publish-btn">Publish</button>
+            <TagAdder />
+           </div>
         </div>
       );
     }

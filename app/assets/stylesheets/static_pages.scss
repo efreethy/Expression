@@ -13,6 +13,7 @@ input:focus,
 button:focus,
 button:active,
 button:hover,
+
 div.editable
 {
     outline:0px !important;
@@ -131,6 +132,11 @@ div.landing-page-post-body.editable {
   width: 700px;
 }
 
+.story-form-container:before {
+  content: "";
+  display: block;
+  clear: both;
+}
 .user-prof-page {
     border: 1px solid purple;
     width: 570px;
@@ -182,4 +188,16 @@ div.story-content {
 .story-index-item:hover {
   background-color: #E6FFFF;
   transition: .7s;
+}
+.publish-tags-containter:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+.publish-tags-containter {
+  margin-top: 10px;
+}
+.story-form-publish-btn {
+  float: left;
+  left: 75px;
 }

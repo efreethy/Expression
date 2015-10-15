@@ -20,4 +20,5 @@
 // = require eventemitter
 // = require components
 //= require medium-editor
+//= require jquery.tokenize
 //= require_tree .
