@@ -3,6 +3,9 @@
 
   root.StoryForm = React.createClass({
     mixins: [ReactRouter.History],
+    getInitialState: function () {
+      return { bannerImageUrl: "https://res.cloudinary.com/efreezy/image/upload/v1444957128/uboghlrcb4hri2qv7bah.jpg" };
+    },
 
     componentDidMount: function () {
       var editor = new MediumEditor('.editable',{
@@ -12,14 +15,20 @@
       });
     },
 
+
+
     handlePublishClick: function () {
       var postTitle = $('.post-title')[0].value;
       var bodyHtml = $('.editable').html();
-
       var tagsArray = $('#tag-adder').tokenize().toArray();
+      var bannerUrl = this.state.bannerImageUrl;
 
-      ApiUtil.createStory(postTitle, bodyHtml, tagsArray, CURRENT_USER_ID);
+      ApiUtil.createStory(postTitle, bodyHtml, tagsArray, bannerUrl, CURRENT_USER_ID);
       this.history.pushState(null, '/');
+    },
+
+    updatePhotoUrl: function (url) {
+      this.setState({ bannerImageUrl: url });
     },
 
     render: function () {
@@ -35,13 +44,15 @@
             <div className="editable story-content story-body" >
               Body..
             </div>
-            <div className='publish-tags-container'>
-              <button onClick={this.handlePublishClick} type="submit"
-              className="btn btn-success story-form-publish-btn">Publish</button>
-            </div>
           </div>
 
-          <TagAdder />
+          <div className="complete-story-module">
+            <UploadImageButton onSubmitPhoto={this.updatePhotoUrl} />
+          <div className='publish-tags-container'>
+            <div className="story-publish-btn" onClick={this.handlePublishClick}>Publish</div>
+            </div>
+            <TagAdder />
+          </div>
          </div>
 
         );

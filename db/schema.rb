@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015182143) do
+ActiveRecord::Schema.define(version: 20151016003135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "stories", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.text     "body",       null: false
-    t.integer  "author_id",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",            null: false
+    t.text     "body",             null: false
+    t.integer  "author_id",        null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "banner_image_url"
   end
 
   add_index "stories", ["author_id"], name: "index_stories_on_author_id", using: :btree
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20151015182143) do
     t.string   "session_token"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "prof_image_url"
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree

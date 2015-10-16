@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: efreezy
+  api_key: '143452987158649'
+  api_secret: RCz-njtR6JGBjjnansGHXK7Toa8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: efreezy
+  api_key: '143452987158649'
+  api_secret: RCz-njtR6JGBjjnansGHXK7Toa8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: efreezy
+  api_key: '143452987158649'
+  api_secret: RCz-njtR6JGBjjnansGHXK7Toa8
+  enhance_image_tag: true
+  static_image_support: false

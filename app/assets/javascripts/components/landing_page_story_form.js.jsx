@@ -22,14 +22,20 @@
       var postTitle = $('.landing-page-post-title')[0].value
       var bodyHtml = $('.editable').html();
       var tagsArray = $('#tag-adder').tokenize().toArray();
+      var bannerUrl = this.state.bannerImageUrl;
+      debugger;
+      ApiUtil.createStory(postTitle, bodyHtml, tagsArray,  bannerUrl);
+    },
 
-      ApiUtil.createStory(postTitle, bodyHtml, tagsArray);
+    updatePhotoUrl: function (url) {
+
+      this.setState({ bannerImageUrl: url });
     },
 
     render: function () {
       return (
         <div className="landing-page-story-form">
-          <input type="text" className="landing-page-post-title story-content"
+          <input type="text" className="landing-page-post-title"
                   onChange={this.onTitleChange} placeholder="Title" value={this.state.title}/>
 
          <div className="editable landing-page-post-body story-content"  >
@@ -37,10 +43,13 @@
          </div>
 
           <br/>
+          <div className="complete-story-module">
+            <UploadImageButton onSubmitPhoto={this.updatePhotoUrl} />
           <div className='publish-tags-container'>
-            <button onClick={this.handlePublishClick} type="submit" className="btn btn-success story-form-publish-btn">Publish</button>
+            <div className="story-publish-btn" onClick={this.handlePublishClick}>Publish</div>
+            </div>
             <TagAdder />
-           </div>
+          </div>
         </div>
       );
     }

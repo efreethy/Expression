@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'cloudinary'
+
 gem 'medium-editor-rails'
 
 gem 'react-rails', '~> 1.3.0'
