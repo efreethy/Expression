@@ -4,10 +4,11 @@
     getInitialState: function () {
 
       return {story: {id: "", title: "", body: "", created_at: "",
-                      authorName: "", bannerImageUrl: "", tags: []}};
+                      author: { name: "",profImageUrl: "", id: ""}, tags: []}};
     },
 
     componentWillMount: function () {
+
       ApiUtil.fetchSingleStory(this.props.params.user_id, this.props.params.id);
       StoryStore.addAuthorStoryShowChangeListener(this._onChange);
     },
@@ -17,10 +18,12 @@
     },
 
     componentDidMount: function () {
-      var bannerImageUrl = this.state.story.bannerImageUrl;
-      $('.story-banner-image').css("background", "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("+bannerImageUrl+")");
-      $('.story-banner-image').css("background-position", "center");
-      $('.story-banner-image').css("background-size", "cover");
+      if (this.state.story.bannerImageUrl !== undefined) {
+        var bannerImageUrl = this.state.story.bannerImageUrl;
+        $('.story-banner-image').css("background", "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("+bannerImageUrl+")");
+        $('.story-banner-image').css("background-position", "center");
+        $('.story-banner-image').css("background-size", "cover");
+      }
     },
 
     _onChange: function () {
@@ -45,7 +48,7 @@
 
           <div className="story-show-page">
 
-            <StoryBadge story={this.state.story} />
+            <StoryBadge story={this.state.story} /><br/><br/><br/>
               <div className="story-content">
 
                 <div dangerouslySetInnerHTML={{__html: this.state.story.body}} />

@@ -8,9 +8,8 @@
 
         cloudinary.openUploadWidget({ cloud_name: 'efreezy', upload_preset: 'stqteojc'},
             function(error, result) {
-              console.log(error, result);
-              console.log(result[0].secure_url);
-    
+
+
               this.props.onSubmitPhoto(result[0].secure_url);
             }.bind(this));
 
@@ -22,7 +21,7 @@
 
       return (
         <div className="upload-img-btn" id="upload_widget_opener">
-          Banner Image
+          Upload Image
         </div>
         );
       }

@@ -4,7 +4,7 @@
     mixins: [ReactRouter.History],
 
     getInitialState: function () {
-      return {username: ""};
+      return {username: "", result: { prof_image_url: ""}};
     },
 
     componentWillMount: function () {
@@ -14,7 +14,7 @@
         url: "/users/"+root.CURRENT_USER_ID,
         dataType: "json",
         success: function(result) {
-          that.setState({username: result.username});
+          that.setState({username: result.username, result});
         }
       });
     },
@@ -23,7 +23,9 @@
       this.history.pushState(null, 'stories/new');
     },
 
-    handleClickToProfile: function () {
+
+    handleClickToProfile: function (e) {
+        e.preventDefault();
         this.history.pushState(null, 'users/' + root.CURRENT_USER_ID);
     },
 
@@ -46,13 +48,13 @@
       <div className="container-fluid">
 
         <div className="navbar-header">
-
           <a className="navbar-brand" href="#">Expression</a>
         </div>
 
 
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav">
+
             <li ><Link to={`/`}>Home</Link></li>
           </ul>
 
@@ -64,6 +66,9 @@
               <button type="submit" className="btn btn-default">Search</button>
             </form></li>
               <li onClick={this.handleWriteStoryClick}><a href="javascript:void(0)">Write a Story</a></li>
+
+            <li onClick={this.handleClickToProfile}><ProfileImage classProp={"nav-bar-prof-img"} width={35} height={35} imageUrl={this.state.result.prof_image_url}/></li>
+
             <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}<span className="caret"></span></a>
               <ul className="dropdown-menu">

@@ -11,5 +11,19 @@ var ApiActions = {
       actionType: StoryConstants.STORY_RECIEVED,
       data: story
     });
-  }
+  },
+
+ receiveSingleUser: function (user) {
+   AppDispatcher.dispatch({
+     actionType: UserConstants.USER_RECEIVED,
+     data: user
+   });
+  },
+
+ receiveSingleTag: function (tag) {
+   AppDispatcher.dispatch({
+     actionType: TagConstants.TAG_RECEIVED,
+     data: tag
+   });
+ }
 };

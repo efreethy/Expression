@@ -15,7 +15,7 @@ class Api::StoriesController < ApplicationController
     @story = Story.new(story_params)
     @story.author_id = params[:user_id]
     @story.banner_image_url = params[:story][:bannerImageUrl]
-
+    
     if (params[:story][:tags] != nil )
       tags = Tag.handleTagsCreation(params)
       @story.tags = tags

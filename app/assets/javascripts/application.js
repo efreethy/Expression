@@ -21,4 +21,6 @@
 // = require components
 //= require medium-editor
 //= require jquery.tokenize
+//= require jquery.cloudinary
+//= require moment
 //= require_tree .

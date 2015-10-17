@@ -41,6 +41,39 @@ var ApiUtil = {
 
   fetchSingleUser: function (user_id) {
 
-  }
+    $.ajax({
+      url: '/users/' + user_id,
+      method: 'GET',
+      dataType: 'JSON',
+      success: function (user) {
+
+        ApiActions.receiveSingleUser(user);
+      }
+    });
+  },
+
+  updateProfImage: function (profImageUrl, user_id) {
+    $.ajax({
+      url: '/users/' + user_id,
+      method: 'PATCH',
+      dataType: 'JSON',
+      data: {user: { profImageUrl: profImageUrl, currentUserId: CURRENT_USER_ID}},
+      success: function (user) {
+        ApiActions.receiveSingleUser(user);
+      }
+    });
+  },
+
+  fetchTag: function (tag_id) {
+    $.ajax({
+      url: '/api/tags/' + tag_id,
+      method: 'GET',
+      dataType: 'JSON',
+      success: function (tag) {
+        console.log(tag);
+        ApiActions.receiveSingleTag(tag);
+      }
+    });
+  },
 
 };

@@ -4,6 +4,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+a:link, a:active {
+  text-decoration: none; color: #57ad68;
+}
+
+a:hover {
+  color: #018E08;
+}
+
 textarea:hover,
 input:hover,
 textarea:active,
@@ -169,7 +177,7 @@ div.landing-page-post-body.editable {
 
 .latest-stories-block {
   margin-top: -20px;
-  margin-left: 235px;
+  margin-left: 227px;
   background-color: white;
   width: 112px;
   // margin: auto;
@@ -295,7 +303,114 @@ div.story-content {
     height: 30px;
 }
 
-.upload-img-btn:hover {
+div.upload-img-btn:hover {
     border-color: #000;
     color: #000;
+}
+
+.edit-prof-img-container {
+  width: 100px;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px
+}
+
+.user-header-bar {
+  text-align: center;
+  margin: auto;
+}
+
+.nav-bar-prof-img {
+  margin-top: 10px;
+  border-radius: 51%;
+}
+
+.nav-bar-prof-img:hover {
+  border: solid #57ad68 1px;
+}
+.tag-show-container {
+  font-size: 30px;
+  margin: auto;
+  border: 1px solid blue;
+  width: 700px;
+}
+
+.tag-show-header {
+  font-weight: 100;
+  height: 60px;
+  border: solid purple 1px;
+}
+.tag-show-header:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.tag-header-left {
+  float: left;
+}
+
+.tag-follow-button-right {
+  float: right;
+}
+
+.tagged-in {
+
+  font-size: 16px;
+}
+
+.tagged-name-show {
+  margin-top: -50px;
+  font-weight: 100;
+  font-size: 40px;
+  margin-left: 35px;
+}
+
+.follow-btn {
+
+    width: 85px;
+    color: #57ad68;
+    text-align: center;
+    top: 8px;
+    border: solid 1px;
+    border-color: #a9d8b2;
+    border-radius: 999em;;
+    padding-top: 5px;
+    font-weight: 200;
+    font-size: 15px;
+    border-radius: 999em;
+
+    height: 35px;
+}
+
+
+.follow-btn:hover {
+    border-color: #57ad68;
+    color: #468c54;
+}
+
+.story-badge-container {
+  margin-top: 10px;
+}
+
+.story-badge-right {
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.story-badge-prof-img {
+  float: left;
+}
+
+div.story-badge-author-link{
+  margin-bottom: -5px;
+  color: #57ad68;
+}
+
+.story-badge-time-ago {
+  color: #C9C9C9;
+  margin-top: -13px;
+  font-size: 13px;
 }

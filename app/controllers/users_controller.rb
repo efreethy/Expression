@@ -1,10 +1,28 @@
 class UsersController < ApplicationController
 
+
   def new
   end
 
+  def update
+    if (!signed_in?)
+      render json: {error: "Unauthorized User Update"}, status: 403
+    end
+
+    @user = User.find(params[:user][:currentUserId])
+    @user.prof_image_url = params[:user][:profImageUrl]
+
+    if @user.save
+      render :show
+    else
+      render json: { errors: @user.errors.full_messages}, status: 422
+    end
+  end
+
   def create
+
     @user = User.new(user_params)
+    @user.prof_image_url = "https://res.cloudinary.com/efreezy/image/upload/v1445032760/scirx2tsadh1b8juywsg.jpg"
 
     if @user.save
       sign_in(@user)
@@ -17,10 +35,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json: @user
   end
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :profImageUrl)
   end
 end

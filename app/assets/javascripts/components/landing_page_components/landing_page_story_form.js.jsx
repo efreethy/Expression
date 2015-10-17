@@ -19,16 +19,14 @@
     },
 
     handlePublishClick: function () {
-      var postTitle = $('.landing-page-post-title')[0].value
+      var postTitle = $('.landing-page-post-title')[0].value;
       var bodyHtml = $('.editable').html();
       var tagsArray = $('#tag-adder').tokenize().toArray();
       var bannerUrl = this.state.bannerImageUrl;
-      debugger;
       ApiUtil.createStory(postTitle, bodyHtml, tagsArray,  bannerUrl);
     },
 
     updatePhotoUrl: function (url) {
-
       this.setState({ bannerImageUrl: url });
     },
 
