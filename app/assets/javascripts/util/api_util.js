@@ -70,7 +70,7 @@ var ApiUtil = {
       method: 'GET',
       dataType: 'JSON',
       success: function (tag) {
-        console.log(tag);
+      
         ApiActions.receiveSingleTag(tag);
       }
     });

@@ -15,6 +15,7 @@
         dataType: "json",
         success: function(result) {
           that.setState({username: result.username, result});
+          $.cloudinary.config({ cloud_name: "efreezy", api_key: "143452987158649"});
         }
       });
     },

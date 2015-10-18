@@ -135,12 +135,12 @@ div.landing-page-post-body.editable {
   font-size: 30px;
   margin: auto;
   border: 1px solid blue;
-  width: 700px;
+  width: 500px;
 }
 .complete-story-module{
   margin: auto;
   border: 1px solid blue;
-  width: 700px;
+  width: 500px;
 }
 
 .story-form-container:before {
@@ -325,14 +325,13 @@ div.upload-img-btn:hover {
 .tag-show-container {
   font-size: 30px;
   margin: auto;
-  border: 1px solid blue;
-  width: 700px;
+
+  width: 550px;
 }
 
 .tag-show-header {
   font-weight: 100;
   height: 60px;
-  border: solid purple 1px;
 }
 .tag-show-header:before {
   content: "";
@@ -416,4 +415,14 @@ div.story-badge-author-link{
 .idx-item-banner-img {
   height: 300px;
   width: 100%;
+}
+.tag-show-story-badge {
+  font-size: 13px;
+  display: block;
+  height: 25px;
+}
+
+.tag-show-story-item {
+  margin-top: 25px;
+  display: block;
 }

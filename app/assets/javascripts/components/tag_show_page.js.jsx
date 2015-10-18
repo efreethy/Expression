@@ -21,7 +21,8 @@
     render: function () {
 
       return (<div className="tag-show-container">
-          <TagShowHeader  tag={this.state.tag}/>
+          <TagShowHeader  tag={this.state.tag}/><br/>
+          <TagShowStoriesIndex tag={this.state.tag}/>
         </div>);
     }
   });
