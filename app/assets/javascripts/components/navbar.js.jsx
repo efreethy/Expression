@@ -7,7 +7,12 @@
       return {username: "", result: { prof_image_url: ""}};
     },
 
+    _onChange: function () {
+      this.setState({result: { prof_image_url: UserStore.singleUser().prof_image_url}});
+    },
+
     componentWillMount: function () {
+      UserStore.addUserShowChangeListener(this._onChange);
       that = this;
       $.ajax({
         type: "GET",

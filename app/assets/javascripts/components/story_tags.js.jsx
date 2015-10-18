@@ -16,15 +16,15 @@
     _onChange: function () {
       var storyTags = StoryStore.singleAuthorStory().tags;
       if (typeof storyTags !== "undefined") {
-        this.setState({tags: storyTags.map(function (tag) {return tag.name;}) });
+        this.setState({tags: storyTags.map(function (tag) {return tag;}) });
       }
     },
 
     render: function () {
-
       var tags = this.state.tags.map(function (tag) {
-        return (<div key={tag} className='tag-item'>{tag}</div>);
+        return (<TagItem tag={tag}/>);
       }.bind(this));
+
       return (
         <div className="story-tags-container">
          {tags}
