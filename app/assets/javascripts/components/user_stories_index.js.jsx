@@ -17,7 +17,7 @@
 
     _onChange: function () {
 
-      this.setState({ authorStories: StoryStore.allAuthorStories() });
+      this.setState({ authorStories: StoryStore.allAuthorStories().slice(0,5) });
     },
 
     render: function () {
@@ -29,7 +29,7 @@
       return (
       <div >
         <p className="latest-stories-block">LATEST STORIES</p>
-    
+
         {authorStories}
       </div>
       );

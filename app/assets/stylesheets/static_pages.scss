@@ -149,7 +149,6 @@ div.landing-page-post-body.editable {
   clear: both;
 }
 .user-prof-page {
-    border: 1px solid purple;
     width: 570px;
     margin: auto;
 }
@@ -172,7 +171,7 @@ div.landing-page-post-body.editable {
 .single-story-hr {
   color: #f00;
   background-color: #eee;
-  height: 2px;
+  height: 1px;
 }
 
 .latest-stories-block {
@@ -192,9 +191,7 @@ div.story-content {
 }
 
 .story-index-item {
-  padding-top: 5px;
-
-  margin-top: -20px;
+    border: solid 3px #FFF;
 }
 
 .story-index-item:hover {
@@ -204,11 +201,7 @@ div.story-content {
 }
 
 .story-index-item:hover {
-  h2 {
-    color: green;
-    transition: .3s;
-  }
-  background-color: #E8F7E9;
+  border: solid 3px #E8F7E9;
     transition: .3s;
 }
 .publish-tags-containter:before {
@@ -413,4 +406,14 @@ div.story-badge-author-link{
   color: #C9C9C9;
   margin-top: -13px;
   font-size: 13px;
+}
+
+.story-content-idx-item {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+}
+
+.idx-item-banner-img {
+  height: 300px;
+  width: 100%;
 }

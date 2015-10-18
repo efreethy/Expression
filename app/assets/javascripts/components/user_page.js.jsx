@@ -6,7 +6,7 @@
       return (
       <div>
         <div className="user-prof-page">
-          <UserHeaderBar author_id={this.props.params.id}/>
+          <UserHeaderBar author_id={this.props.params.id}/><br/>
         </div>
         <hr className="profile-page-hr"/>
         <div className="user-prof-page">

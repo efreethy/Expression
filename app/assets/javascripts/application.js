@@ -23,4 +23,5 @@
 //= require jquery.tokenize
 //= require jquery.cloudinary
 //= require moment
+//= require jquery.dotdotdot.min
 //= require_tree .

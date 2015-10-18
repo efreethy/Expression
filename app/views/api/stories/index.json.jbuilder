@@ -5,4 +5,5 @@ json.array! @stories do |story|
   json.body story.body
   json.authorName story.author.username
   json.created_at story.created_at
+  json.imageUrl story.banner_image_url
 end
