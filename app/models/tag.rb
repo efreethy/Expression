@@ -13,11 +13,18 @@ class Tag < ActiveRecord::Base
   validates :name, uniqueness: true
 
   has_many :story_taggings
+  has_many :user_taggings
 
   has_many(
     :stories,
     through: :story_taggings,
     source: :story
+  )
+
+  has_many(
+    :subcribers,
+    through: :user_taggings,
+    source: :user
   )
 
   def self.handleTagsCreation(params)

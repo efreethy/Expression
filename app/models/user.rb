@@ -25,6 +25,14 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many :user_taggings
+
+  has_many(
+    :tag_subscriptions,
+    through: :user_taggings,
+    source: :tag
+  )
+
   attr_reader :password
   def password=(password)
     @password = password
