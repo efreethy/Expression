@@ -22,7 +22,7 @@
 
     render: function () {
       var tags = this.state.tags.map(function (tag) {
-        return (<TagItem tag={tag}/>);
+        return (<TagItem key={tag.id} tag={tag}/>);
       }.bind(this));
 
       return (

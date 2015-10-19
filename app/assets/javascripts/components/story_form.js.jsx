@@ -31,6 +31,11 @@
       this.setState({ bannerImageUrl: url });
     },
 
+    handleStoryFormClick: function () {
+      $('.editable.story-content.story-body').text("");
+      $('.untouched').removeClass("untouched");
+    },
+
     render: function () {
 
       return (
@@ -41,7 +46,7 @@
             <input type="text" className="post-title story-content"
                     placeholder="Title"/>
             <br/>
-            <div className="editable story-content story-body" >
+            <div onClick={this.handleStoryFormClick} className="editable story-content story-body" >
               Body..
             </div>
           </div>

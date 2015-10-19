@@ -30,13 +30,17 @@
       this.setState({ bannerImageUrl: url });
     },
 
+    handleStoryFormClick: function () {
+      $('.untouched').removeClass("untouched");
+    },
+
     render: function () {
       return (
         <div className="landing-page-story-form">
           <input type="text" className="landing-page-post-title"
                   onChange={this.onTitleChange} placeholder="Title" value={this.state.title}/>
 
-         <div className="editable landing-page-post-body story-content"  >
+         <div onClick={this.handleStoryFormClick} className="untouched editable landing-page-post-body story-content"  >
             Body...
          </div>
 

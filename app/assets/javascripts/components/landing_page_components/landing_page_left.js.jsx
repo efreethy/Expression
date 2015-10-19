@@ -5,7 +5,6 @@
       return (
           <div className="landing-page-left">
             <div className="landing-feed">
-              Landing Page Feed
               <LandingPageStoryForm />
             </div>
           </div>

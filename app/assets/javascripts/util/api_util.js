@@ -2,6 +2,7 @@ var ApiUtil = {
 
 
   fetchAuthorStories: function (author_id) {
+
     $.ajax({
       url: '/api/users/' + author_id +'/stories',
       method: 'GET',
@@ -40,7 +41,7 @@ var ApiUtil = {
   },
 
   fetchSingleUser: function (user_id) {
-
+    if (typeof user_id !== "undefined") {
     $.ajax({
       url: '/users/' + user_id,
       method: 'GET',
@@ -50,6 +51,7 @@ var ApiUtil = {
         ApiActions.receiveSingleUser(user);
       }
     });
+  }
   },
 
   updateProfImage: function (profImageUrl, user_id) {

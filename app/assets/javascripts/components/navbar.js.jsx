@@ -29,7 +29,7 @@
     componentWillUnmount: function () {
       UserStore.removeUserShowChangeListener(this._onChange);
     },
-    
+
     handleWriteStoryClick: function () {
       this.history.pushState(null, 'stories/new');
     },
@@ -38,6 +38,11 @@
     handleClickToProfile: function (e) {
         e.preventDefault();
         this.history.pushState(null, 'users/' + root.CURRENT_USER_ID);
+    },
+
+    handleClickToHome: function (e) {
+        e.preventDefault();
+        this.history.pushState(null, '/');
     },
 
     handleSignOutClick: function () {
@@ -59,7 +64,9 @@
       <div className="container-fluid">
 
         <div className="navbar-header">
-          <a className="navbar-brand" href="#">Expression</a>
+          <a className="navbar-brand" href="javascript:void(0)">
+          <img onClick={this.handleClickToHome} src="/assets/expression-logo-2.png" alt="expression-logo" />
+          </a>
         </div>
 
 
@@ -72,9 +79,9 @@
           <ul className="nav navbar-nav navbar-right">
             <li> <form className="navbar-form navbar-left" role="search">
               <div className="form-group">
-                <input type="text" className="form-control" placeholder="Search Expression"/>
+                <input type="text" className="form-control nav-bar-search" placeholder="Search Expression"/>
               </div>
-              <button type="submit" className="btn btn-default">Search</button>
+              <button type="submit" className="btn btn-default glyphicon glyphicon-search"></button>
             </form></li>
               <li onClick={this.handleWriteStoryClick}><a href="javascript:void(0)">Write a Story</a></li>
 

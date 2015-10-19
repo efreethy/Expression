@@ -14,8 +14,8 @@
                             id: story.id };
 
           return (<div>
-                  <div className="tag-show-story-badge"><StoryBadge story={storyObj} /></div>
-                  <div className="tag-show-story-item"><StoryIndexItem story={storyIndexObj} /></div>
+                  <div className="tag-show-story-badge"><StoryBadge key={story.id} story={storyObj} /></div>
+                  <div className="tag-show-story-item"><StoryIndexItem key={story.id} story={storyIndexObj} /></div>
                   </div>);
       });
       return stories;

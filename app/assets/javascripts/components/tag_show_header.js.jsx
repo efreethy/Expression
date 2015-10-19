@@ -41,9 +41,9 @@
    handleFollowButtonClick: function () {
 
     if (this.state.isFollowed) {
-      ApiUtil.deleteUserTagging(CURRENT_USER_ID, this.props.tag.id)
+      ApiUtil.deleteUserTagging(CURRENT_USER_ID, this.props.tag.id);
     } else {
-      ApiUtil.createUserTagging(CURRENT_USER_ID, this.props.tag.id)
+      ApiUtil.createUserTagging(CURRENT_USER_ID, this.props.tag.id);
     }
    },
 
