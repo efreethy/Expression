@@ -3,7 +3,6 @@
   var _singleUser;
 
   var _addSingleUser = function (user) {
-
     _singleUser = user;
   };
 

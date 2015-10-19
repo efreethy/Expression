@@ -1,6 +1,39 @@
 (function (root) {
 
   root.TagShowHeader = React.createClass({
+    getInitialState: function () {
+      return {isFollowed: false, tagName: this};
+    },
+
+    componentWillMount: function () {
+      ApiUtil.fetchSingleUser(CURRENT_USER_ID);
+
+      UserStore.addUserShowChangeListener(this._onChange);
+
+    },
+
+   _onChange: function () {
+     var tagName = this.props.tag.name;
+     var isFollowed = this._determineIfTagIsFollowed(tagName);
+     if (isFollowed) {
+       this.setState({isFollowed: true});
+     } else {
+       this.setState({isFollowed: false});
+     }
+   },
+
+   _determineIfTagIsFollowed: function (tagName) {
+
+     var isFollowed = false;
+
+     UserStore.singleUser().tag_subs.map(function (tag) {
+       if (tag.name === tagName) {
+         isFollowed =  true;
+       }
+     }.bind(this));
+
+     return isFollowed;
+   },
 
     render: function () {
 
@@ -12,7 +45,7 @@
 
               </div>
               <div className="tag-follow-button-right">
-                <FollowButton />
+                <FollowButton isFollowed={this.state.isFollowed}/>
               </div>
             </div>
             );

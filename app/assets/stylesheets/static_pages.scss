@@ -382,6 +382,16 @@ div.upload-img-btn:hover {
     color: #468c54;
 }
 
+.follow-btn.followed {
+  background-color: #57ad68;
+  color: white;
+}
+
+.follow-btn.followed:hover {
+  background-color: white;
+  color: #57ad68;
+}
+
 .story-badge-container {
   margin-top: 10px;
 }

@@ -12,6 +12,7 @@
     },
 
     componentWillMount: function () {
+      ApiUtil.fetchSingleUser(CURRENT_USER_ID);
       UserStore.addUserShowChangeListener(this._onChange);
       that = this;
       $.ajax({
