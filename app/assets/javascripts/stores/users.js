@@ -6,6 +6,12 @@
     _singleUser = user;
   };
 
+  var _resetUserTags = function (tags) {
+    _singleUser.tag_subs = tags;
+  };
+
+
+
   var SINGLE_USER_CHANGE_EVENT = 'singlUserChangeEvent';
 
   root.UserStore = $.extend({}, EventEmitter.prototype, {
@@ -25,6 +31,10 @@
      switch (payload.actionType) {
        case UserConstants.USER_RECEIVED:
        _addSingleUser(payload.data);
+       UserStore.emit(SINGLE_USER_CHANGE_EVENT);
+       break;
+       case UserConstants.NEW_TAGS_RECEIVED:
+       _resetUserTags(payload.data);
        UserStore.emit(SINGLE_USER_CHANGE_EVENT);
        break;
      }

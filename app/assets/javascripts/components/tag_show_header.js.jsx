@@ -2,7 +2,7 @@
 
   root.TagShowHeader = React.createClass({
     getInitialState: function () {
-      return {isFollowed: false, tagName: this};
+      return {isFollowed: false, tagName: this.props.tag.name};
     },
 
     componentWillMount: function () {
@@ -10,6 +10,9 @@
 
       UserStore.addUserShowChangeListener(this._onChange);
 
+    },
+    componentWillUnmount: function () {
+      UserStore.removeUserShowChangeListener(this._onChange);
     },
 
    _onChange: function () {
@@ -35,6 +38,15 @@
      return isFollowed;
    },
 
+   handleFollowButtonClick: function () {
+
+    if (this.state.isFollowed) {
+      ApiUtil.deleteUserTagging(CURRENT_USER_ID, this.props.tag.id)
+    } else {
+      ApiUtil.createUserTagging(CURRENT_USER_ID, this.props.tag.id)
+    }
+   },
+
     render: function () {
 
       return (
@@ -45,7 +57,7 @@
 
               </div>
               <div className="tag-follow-button-right">
-                <FollowButton isFollowed={this.state.isFollowed}/>
+                <FollowButton followButtonClicked={this.handleFollowButtonClick} isFollowed={this.state.isFollowed}/>
               </div>
             </div>
             );

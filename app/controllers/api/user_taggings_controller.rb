@@ -10,7 +10,7 @@ class Api::UserTaggingsController < ApplicationController
   end
 
   def destroy
-    @user_tagging = UserTagging.find(params[:tag_id])
+    @user_tagging = UserTagging.find_by_tag_id(params[:tag_id])
     @user = User.find(params[:user_id])
     if @user_tagging.destroy
       render json: @user.tag_subscriptions

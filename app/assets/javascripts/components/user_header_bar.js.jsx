@@ -12,6 +12,10 @@
       UserStore.addUserShowChangeListener(this._onChange);
     },
 
+    componentWillUnmount: function () {
+      UserStore.removeUserShowChangeListener(this._onChange);
+    },
+
     _onChange: function () {
       this.setState({ user: UserStore.singleUser()});
     },
@@ -29,7 +33,7 @@
           <UploadImageButton onSubmitPhoto={this.updatePhotoUrl} />
         </div>);
       }
-      
+
       return (
       <div className="user-header-bar">
         <div>

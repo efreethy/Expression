@@ -1,4 +1,5 @@
 json.name @tag.name
+json.id @tag.id
 json.created_at @tag.created_at
 json.stories @tag.stories do |story|
    json.title story.title

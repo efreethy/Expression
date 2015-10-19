@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :tags, only: [:show]
+    resources :user_taggings, only: [:create, :destroy]
     resources :stories, only: [:new]
     resources :users, only: [:new] do
       resources :stories, only: [:create, :show, :index] do

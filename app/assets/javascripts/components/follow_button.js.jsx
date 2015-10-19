@@ -11,7 +11,7 @@
         var followText = "Follow";
       }
       return (
-            <div className={"follow-btn "+followClass}>
+            <div onClick={this.props.followButtonClicked} className={"follow-btn "+followClass}>
               {followText}
             </div>
             );

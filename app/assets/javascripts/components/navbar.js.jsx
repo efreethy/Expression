@@ -26,6 +26,10 @@
       });
     },
 
+    componentWillUnmount: function () {
+      UserStore.removeUserShowChangeListener(this._onChange);
+    },
+    
     handleWriteStoryClick: function () {
       this.history.pushState(null, 'stories/new');
     },

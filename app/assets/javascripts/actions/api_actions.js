@@ -25,5 +25,12 @@ var ApiActions = {
      actionType: TagConstants.TAG_RECEIVED,
      data: tag
    });
+ },
+
+ receiveNewUserTags: function (tags) {
+   AppDispatcher.dispatch({
+     actionType: UserConstants.NEW_TAGS_RECEIVED,
+     data: tags
+   });
  }
 };

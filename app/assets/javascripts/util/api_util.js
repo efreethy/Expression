@@ -70,10 +70,33 @@ var ApiUtil = {
       method: 'GET',
       dataType: 'JSON',
       success: function (tag) {
-      
         ApiActions.receiveSingleTag(tag);
       }
     });
   },
+
+  createUserTagging: function (user_id, tag_id) {
+    $.ajax({
+      url: '/api/user_taggings/',
+      method: 'POST',
+      dataType: 'JSON',
+      data: {user_id: user_id, tag_id: tag_id},
+      success: function (tags) {
+        ApiActions.receiveNewUserTags(tags);
+      }
+    });
+  },
+
+  deleteUserTagging: function (user_id, tag_id) {
+    $.ajax({
+      url: '/api/user_taggings/'+tag_id,
+      method: 'DELETE',
+      dataType: 'JSON',
+      data: {user_id: user_id, tag_id: tag_id},
+      success: function (tags) {
+        ApiActions.receiveNewUserTags(tags);
+      }
+    });
+  }
 
 };

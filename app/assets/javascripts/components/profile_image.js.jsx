@@ -11,6 +11,10 @@
       UserStore.addUserShowChangeListener(this._onChange);
       $.cloudinary.config({ cloud_name: "efreezy", api_key: "143452987158649"});
     },
+    
+    componentWillUnmount: function () {
+      UserStore.removeUserShowChangeListener(this._onChange);
+    },
 
     _onChange: function () {
       this.setState({imageUrl: UserStore.singleUser().prof_image_url});
@@ -30,7 +34,7 @@
     },
 
     render: function () {
-      
+
         return (<img className={this.state.classState} src={this.constructSrc(this.props.imageUrl)}/>);
 
     }
