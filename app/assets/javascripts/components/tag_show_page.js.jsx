@@ -6,6 +6,7 @@
     },
 
     componentWillMount: function () {
+
       ApiUtil.fetchTag(this.props.params.id);
       TagStore.addTagShowChangeListener(this._onChange);
     },
@@ -19,7 +20,7 @@
     },
 
     render: function () {
-
+    
       return (<div className="tag-show-container">
           <TagShowHeader  tag={this.state.tag}/><br/>
           <TagShowStoriesIndex tag={this.state.tag}/>

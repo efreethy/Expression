@@ -8,7 +8,9 @@
     },
 
     _onChange: function () {
-      this.setState({result: { prof_image_url: UserStore.singleUser().prof_image_url}});
+      if (CURRENT_USER_ID === UserStore.singleUser().id) {
+        this.setState({result: { prof_image_url: UserStore.singleUser().prof_image_url}});
+      }
     },
 
     componentWillMount: function () {

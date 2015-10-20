@@ -57,7 +57,7 @@
 
               </div>
               <div className="tag-follow-button-right">
-                <FollowButton followButtonClicked={this.handleFollowButtonClick} isFollowed={this.state.isFollowed}/>
+                <FollowButton classProp={""} followButtonClicked={this.handleFollowButtonClick} isFollowed={this.state.isFollowed}/>
               </div>
             </div>
             );

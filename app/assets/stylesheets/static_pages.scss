@@ -371,7 +371,7 @@ div.upload-img-btn:hover {
 .follow-btn {
 
     width: 85px;
-    color: #57ad68;
+    color: #52B256;
     text-align: center;
     top: 8px;
     border: solid 1px;
@@ -468,7 +468,7 @@ div.story-badge-author-link{
   color: black;
 }
 .navbar-brand {
-  margin-top: -8px;
+  margin-top: -10px;
 }
 
 input.form-control.nav-bar-search {
@@ -485,17 +485,44 @@ input.form-control.nav-bar-search {
   border-radius: 19px;
 }
 
-div.Tokenize ul.TokensContainer li.Token {
+.user-show-follow-btn {
+  margin: auto;
+}
+.usr-follow-bar-container {
+  margin: auto;
+  width: 250px;
+  height: 75px;
+  font-size: 20px;
+  margin-bottom: 3px;
+  margin-top: 10px;
+}
+.usr-follow-bar-container:before {
+  content: "";
+  display: block;
+  clear: both;
+}
 
-  color: rgba(0,0,0,0.6);
-  font-weight: 400;
-  font-size: 13px;
-  border-radius: 2px;
-  border: 1px solid #F0F0F0;
-  padding: 3px 10px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  display: inline-block;
-  background: white;
-  padding-bottom: 2px;
+.follow-bar-left {
+  float: left;
+  width: 124px;
+  height: 55px;
+  border-right: solid 1px #eee;
+}
+
+.follow-bar-right {
+  float: left;
+  width: 124px;
+  height: 55px;
+
+}
+
+.follow-text {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  margin-bottom: 10px;
+}
+.user-show-username {
+  margin-bottom: 5px;
+  margin-top: 5px;
 }

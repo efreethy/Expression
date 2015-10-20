@@ -12,7 +12,7 @@
       }
     },
     render: function () {
-
+    
       return (
         <div className="story-badge-container">
           <div className="story-badge-prof-img">

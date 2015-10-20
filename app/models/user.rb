@@ -16,6 +16,26 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many(
+    :followers,
+    class_name: 'Following',
+    foreign_key: :user_id,
+    primary_key: :id
+    )
+
+  has_many :all_followers, through: :followers, foreign_key: :user_id, source: :user
+
+
+  has_many(
+    :following,
+    class_name: 'Following',
+    foreign_key: :follower_id,
+    primary_key: :id
+    )
+
+
+  has_many :all_followings, through: :following, foreign_key: :user_id, source: :user
+
   after_initialize :ensure_session_token
 
   has_many(

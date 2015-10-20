@@ -11,7 +11,7 @@
       UserStore.addUserShowChangeListener(this._onChange);
       $.cloudinary.config({ cloud_name: "efreezy", api_key: "143452987158649"});
     },
-    
+
     componentWillUnmount: function () {
       UserStore.removeUserShowChangeListener(this._onChange);
     },
@@ -23,7 +23,7 @@
 
     constructSrc: function (url) {
 
-      if (typeof url !== "undefined") {
+      if (typeof url !== "undefined" && url !== null) {
         var slicedUrl = url.slice(url.indexOf('upload/')+7);
         var lastIdx = slicedUrl.indexOf('/');
         var trailingUrl = slicedUrl.slice(lastIdx + 1);

@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018195856) do
+ActiveRecord::Schema.define(version: 20151019225119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "followings", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "follower_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "followings", ["user_id", "follower_id"], name: "index_followings_on_user_id_and_follower_id", unique: true, using: :btree
 
   create_table "stories", force: :cascade do |t|
     t.string   "title",            null: false

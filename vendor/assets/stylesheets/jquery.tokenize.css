@@ -42,12 +42,24 @@ div.Tokenize.Disabled ul.TokensContainer,
 div.Tokenize.Disabled ul.TokensContainer input {
     cursor: not-allowed;
 }
+div.Tokenize ul.TokensContainer li.Token, div.Tokenize ul.TokensContainer li.TokenSearch {
+  padding-bottom: 3px;
+}
 
 div.Tokenize ul.TokensContainer li.Token {
-    border: 1px solid #ccd5e3;
-    background-color: #eff2f7;
-    padding: 0 5px;
-    line-height: 18px;
+    padding: 3px 10px;
+    line-height: 22px;
+    height: 30px;
+    background-color: green;
+    color: rgba(0,0,0,0.6);
+    font-weight: 400;
+    font-size: 13px;
+    border-radius: 2px;
+    border: 1px solid #F0F0F0;
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    background: white;
 }
 
 div.Tokenize ul.TokensContainer.ui-sortable:not(.ui-sortable-disabled) li.Token {
@@ -69,7 +81,9 @@ div.Tokenize ul.TokensContainer li.Token.PendingDelete {
 div.Tokenize ul.TokensContainer li.Token,
 div.Tokenize ul.TokensContainer li.TokenSearch {
     margin: 5px 0 0 5px;
-    height: 18px;
+    height: 22px;
+    padding-bottom: 5px;
+    padding-top: 0px;
     float: left;
 }
 
@@ -94,7 +108,7 @@ div.Tokenize ul.TokensContainer,
 div.Tokenize ul.Dropdown {
     /* custom additions */
   border-left: 1px solid #ccc;
-  height: 30px;
+  height: 32px;
   margin-left: 10px;
 }
 
@@ -107,6 +121,7 @@ div.Tokenize ul.TokensContainer li.Token a.Close {
     padding: 0;
     cursor: pointer;
     color: #a6b4ce;
+    margin-top: 4px;
 }
 
 div.Tokenize.Disabled ul.TokensContainer li.Token a.Close {
@@ -116,6 +131,7 @@ div.Tokenize.Disabled ul.TokensContainer li.Token a.Close {
 div.Tokenize ul.TokensContainer li.Token a.Close:hover {
     background: transparent;
     text-decoration: none;
+
 }
 
 div.Tokenize ul.Dropdown {

@@ -23,6 +23,7 @@
 
     render: function () {
       var tagStories = this._generateTagStoriesList();
+      
       return (<div className="tag-show-stories-index">
         {tagStories}
       </div>);
