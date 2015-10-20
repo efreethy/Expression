@@ -5,7 +5,8 @@
       return (
           <div className="landing-page-left">
             <div className="landing-feed">
-              <LandingPageStoryForm />
+              <LandingPageStoryForm user={this.props.user}/>
+              <LandingPageFeedIndex user={this.props.user}/>
             </div>
           </div>
       );

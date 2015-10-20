@@ -66,7 +66,17 @@ textarea {
 
 // for visibility only
 .landing-page-story-form {
-  border: 1px solid purple;
+  font-size: 16px;
+}
+
+.landing-page-story-form.hidden {
+  height: 0px;
+  transition: 2s;
+}
+
+.landing-page-story-form.open {
+  height: 200px;
+  transition: 2s;
 }
 
 .landing-page-container:before {
@@ -74,15 +84,15 @@ textarea {
   display: block;
   clear: both;
 }
+
 .landing-feed {
   width: 550px;
   height: 1000px;
-  border: 1px solid blue;
   margin: auto
 }
 .landing-page-left {
   float: left;
-
+  margin-top: 15px;
   // border: solid black 2px;
   width: 61%;
 
@@ -112,8 +122,9 @@ textarea {
 
 div.landing-page-post-body.editable {
   width: 420px;
+  height: 100px;
   max-width: 420px;
-  font-size: 20px;
+  font-size: 17px;
   color: black;
   top: 50%;
   left: 27%;
@@ -142,8 +153,15 @@ div.landing-page-post-body.editable.untouched {
   font-size: 30px;
   margin: auto;
   border: 1px solid blue;
-  width: 500px;
+  width: 550px;
 }
+
+.story-form-toggle-header {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #eee;
+}
+
 .complete-story-module{
   margin: auto;
   width: 500px;
@@ -194,6 +212,12 @@ div.landing-page-post-body.editable.untouched {
 div.story-content {
   font-family: 'Lora', serif;
   font-size: 18px;
+}
+div.story-content.write-here {
+  margin-left: 5px;
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  color: gray
 }
 
 .story-index-item {
@@ -525,4 +549,12 @@ input.form-control.nav-bar-search {
 .user-show-username {
   margin-bottom: 5px;
   margin-top: 5px;
+}
+
+.landing-page-feed-index {
+  margin-top: 5px;
+  border-top: solid 1px #dddddd;
+}
+.entire-story-form-header {
+  margin-bottom: 20px;
 }

@@ -5,13 +5,12 @@
       return {tag: {name: "", stories: []}};
     },
 
-    componentWillMount: function () {
-
+    componentDidMount: function () {
       ApiUtil.fetchTag(this.props.params.id);
       TagStore.addTagShowChangeListener(this._onChange);
     },
 
-    componentWillUnount: function () {
+    componentWillUnmount: function () {
       TagStore.removeTagShowChangeListener(this._onChange);
     },
 
@@ -20,7 +19,7 @@
     },
 
     render: function () {
-    
+
       return (<div className="tag-show-container">
           <TagShowHeader  tag={this.state.tag}/><br/>
           <TagShowStoriesIndex tag={this.state.tag}/>

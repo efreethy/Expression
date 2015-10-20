@@ -22,7 +22,7 @@
 
       return (
         <div className="landing-page-container">
-          <LandingPageLeft />
+          <LandingPageLeft user={this.state.user}/>
           <LandingPageRight tags={this.state.user.tag_subs} />
         </div>
       );

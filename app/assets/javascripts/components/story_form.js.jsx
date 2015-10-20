@@ -4,7 +4,7 @@
   root.StoryForm = React.createClass({
     mixins: [ReactRouter.History],
     getInitialState: function () {
-      return { bannerImageUrl: "https://res.cloudinary.com/efreezy/image/upload/v1444957128/uboghlrcb4hri2qv7bah.jpg" };
+      return { formClicked: false, bannerImageUrl: "https://res.cloudinary.com/efreezy/image/upload/v1444957128/uboghlrcb4hri2qv7bah.jpg" };
     },
 
     componentDidMount: function () {
@@ -32,8 +32,11 @@
     },
 
     handleStoryFormClick: function () {
-      $('.editable.story-content.story-body').text("");
-      $('.untouched').removeClass("untouched");
+      if (this.state.formClicked === false) {
+        $('.editable.story-content.story-body').text("");
+        $('.untouched').removeClass("untouched");
+        this.setState({formClicked: true})
+      }
     },
 
     render: function () {
