@@ -12,27 +12,48 @@
     },
 
     componentWillUnmount: function () {
-      UserStore.removeUserShowChangeListener(this._onChange);
+      UserStore.removeSingleUserShowChangeListener(this._onChange);
     },
 
     _onChange: function () {
       this.setState({ user: UserStore.userShow()});
     },
 
+    handleFollowButtonClick: function () {
+      if (this.isFollowing) {
+        ApiUtil.deleteUserFollowing(CURRENT_USER_ID, this.state.user.id)
+      } else {
+        ApiUtil.createUserFollowing(CURRENT_USER_ID, this.state.user.id)
+      }
+    },
 
     updatePhotoUrl: function (url) {
       this.setState({ profImageUrl: url });
       ApiUtil.updateProfImage(url, CURRENT_USER_ID);
     },
 
+    determineIfFollowing: function () {
+      this.isFollowing = false;
+      if (typeof UserStore.userShow() !== "undefined") {
+        var user = UserStore.userShow();
+        user.followers.forEach(function (user) {
+          if (user.username === UserStore.singleUser().username) {
+            this.isFollowing = true;
+          }
+        }.bind(this));
+      }
+      return this.isFollowing;
+    },
+
     render: function () {
+      this.determineIfFollowing();
       if (CURRENT_USER_ID === parseInt(this.props.author_id)) {
         var followButton = "";
         var uploadImageButton = (<div className="edit-prof-img-container">
           <UploadImageButton onSubmitPhoto={this.updatePhotoUrl} />
         </div>);
       } else {
-        var followButton =  <FollowButton user_id={this.props.user_id} classProp={" user-show-follow-btn"} isFollowed={false} />
+        var followButton =  <FollowButton followButtonClicked={this.handleFollowButtonClick} classProp={" user-show-follow-btn"} isFollowed={this.isFollowing} />
       }
 
 

@@ -11,6 +11,10 @@
     _singleUser.tag_subs = tags;
   };
 
+  var _resetUserFollowers = function (followers) {
+    _userShow.followers = followers;
+  };
+
   var _setUserShow = function (user) {
     _userShow = user;
   };
@@ -55,6 +59,10 @@
        break;
        case UserConstants.USER_SHOW_RECEIVED:
        _setUserShow(payload.data);
+       UserStore.emit(USER_SHOW_CHANGE_EVENT);
+       break;
+       case UserConstants.NEW_FOLLOWERS_RECEIVED:
+       _resetUserFollowers(payload.data);
        UserStore.emit(USER_SHOW_CHANGE_EVENT);
        break;
      }

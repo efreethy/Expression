@@ -39,5 +39,12 @@ var ApiActions = {
      actionType: UserConstants.NEW_TAGS_RECEIVED,
      data: tags
    });
+ },
+
+ receiveNewFollowers: function (followers) {
+   AppDispatcher.dispatch({
+     actionType: UserConstants.NEW_FOLLOWERS_RECEIVED,
+     data: followers
+   });
  }
 };

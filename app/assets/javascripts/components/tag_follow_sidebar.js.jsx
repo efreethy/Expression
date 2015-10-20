@@ -13,7 +13,6 @@
 
     render: function () {
       var tags = this._generateTagItems();
-
       return (
           <div className="tag-follow-sidebar">
             <div className="tags-you-follow">TAGS YOU FOLLOW</div>

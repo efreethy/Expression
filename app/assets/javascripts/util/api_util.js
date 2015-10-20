@@ -112,8 +112,29 @@ var ApiUtil = {
         ApiActions.receiveNewUserTags(tags);
       }
     });
+  },
+
+  deleteUserFollowing: function (follower_id, followed_id) {
+    $.ajax({
+      url: '/api/followings/'+follower_id,
+      method: 'DELETE',
+      dataType: 'JSON',
+      data: {follower_id: follower_id, followed_id: followed_id},
+      success: function (followers) {
+        ApiActions.receiveNewFollowers(followers);
+      }
+    });
+  },
+
+  createUserFollowing: function (follower_id, followed_id) {
+    $.ajax({
+      url: '/api/followings/',
+      method: 'POST',
+      dataType: 'JSON',
+      data: {follower_id: follower_id, followed_id: followed_id},
+      success: function (followers) {
+        ApiActions.receiveNewFollowers(followers);
+      }
+    });
   }
-
-
-
 };
