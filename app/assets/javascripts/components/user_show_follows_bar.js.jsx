@@ -6,17 +6,22 @@
     },
 
     componentWillMount: function () {
-      UserStore.addUserShowChangeListener(this._onChange);
-      ApiUtil.fetchSingleUser(this.props.author_id);
+      ApiUtil.fetchUserShow(this.props.author_id);
+      UserStore.addSingleUserShowChangeListener(this._onChange);
+    },
+
+    componentWillUnmount: function () {
+      UserStore.removeSingleUserShowChangeListener(this._onChange);
     },
 
     _onChange: function () {
+      var user = UserStore.userShow();
 
-      var user = UserStore.singleUser();
       if (user.id.toString() === this.props.author_id) {
-        // this.setState({followers: user.followers.length.toString(), following: user.following.length.toString()})
+        this.setState({followers: user.followers.length.toString(), following: user.following.length.toString()});
       }
     },
+
     render: function () {
       return (
         <div className="usr-follow-bar-container">

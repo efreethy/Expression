@@ -54,6 +54,19 @@ var ApiUtil = {
   }
   },
 
+  fetchUserShow: function (user_id) {
+    if (typeof user_id !== "undefined") {
+    $.ajax({
+      url: '/users/' + user_id,
+      method: 'GET',
+      dataType: 'JSON',
+      success: function (user) {
+        ApiActions.receiveSingleUserShow(user);
+      }
+    });
+  }
+  },
+
   updateProfImage: function (profImageUrl, user_id) {
     $.ajax({
       url: '/users/' + user_id,

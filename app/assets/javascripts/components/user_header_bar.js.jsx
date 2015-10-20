@@ -8,8 +8,7 @@
     },
 
     componentWillMount: function () {
-      ApiUtil.fetchSingleUser(this.props.author_id);
-      UserStore.addUserShowChangeListener(this._onChange);
+      UserStore.addSingleUserShowChangeListener(this._onChange);
     },
 
     componentWillUnmount: function () {
@@ -17,7 +16,7 @@
     },
 
     _onChange: function () {
-      this.setState({ user: UserStore.singleUser()});
+      this.setState({ user: UserStore.userShow()});
     },
 
 
@@ -37,8 +36,8 @@
       }
 
 
-
       return (
+
       <div className="user-header-bar">
         <div>
           <div>

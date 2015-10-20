@@ -20,6 +20,13 @@ var ApiActions = {
    });
   },
 
+ receiveSingleUserShow: function (user) {
+   AppDispatcher.dispatch({
+     actionType: UserConstants.USER_SHOW_RECEIVED,
+     data: user
+   });
+  },
+
  receiveSingleTag: function (tag) {
    AppDispatcher.dispatch({
      actionType: TagConstants.TAG_RECEIVED,

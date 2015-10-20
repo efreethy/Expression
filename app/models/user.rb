@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     primary_key: :id
     )
 
-  has_many :all_followers, through: :followers, foreign_key: :user_id, source: :user
+  has_many :all_followers, through: :followers, foreign_key: :follower_id, source: :follower
 
 
   has_many(

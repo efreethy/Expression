@@ -5,23 +5,24 @@
       return { authorStories: [] };
     },
 
+    componentWillReceiveProps: function () {
+      ApiUtil.fetchAuthorStories(this.props.author_id);
+    },
+
     componentWillMount: function () {
       ApiUtil.fetchAuthorStories(this.props.author_id);
       StoryStore.addAuthorStoriesIndexChangeListener(this._onChange);
     },
 
     componentWillUnmount: function () {
-      ApiUtil.fetchAuthorStories(this.props.author_id);
       StoryStore.removeAuthorStoriesIndexChangeListener(this._onChange);
     },
 
     _onChange: function () {
-
       this.setState({ authorStories: StoryStore.allAuthorStories().slice(0,5) });
     },
 
     render: function () {
-
       var authorStories = this.state.authorStories.map(function (story) {
         return <StoryIndexItem key={story.id} story={story} />
       });

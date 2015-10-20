@@ -39,7 +39,7 @@
 
     handleClickToProfile: function (e) {
         e.preventDefault();
-        this.history.pushState(null, 'users/' + root.CURRENT_USER_ID);
+        this.history.pushState(null, 'users/' + root.CURRENT_USER_ID)
     },
 
     handleClickToHome: function (e) {

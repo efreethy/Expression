@@ -5,6 +5,7 @@ json.followers @user.all_followers do |user|
   json.username user.username
   json.id user.id
 end
+
 json.following @user.all_followings do |user|
    json.username user.username
    json.id user.id
