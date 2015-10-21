@@ -67,7 +67,7 @@
 
         <div className="navbar-header">
           <a className="navbar-brand" href="javascript:void(0)">
-          <img onClick={this.handleClickToHome} src="/assets/expression-logo-2.png" alt="expression-logo" />
+          <img onClick={this.handleClickToHome} src="expression-logo-2.png" alt="expression-logo" />
           </a>
         </div>
 

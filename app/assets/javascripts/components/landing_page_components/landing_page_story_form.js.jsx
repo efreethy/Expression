@@ -19,11 +19,7 @@
    componentDidMount: function () {
       var editor = new MediumEditor('.editable');
     },
-
-    componentWillReceiveProps: function () {
-
-    },
-
+    
     handlePublishClick: function () {
       var postTitle = $('.landing-page-post-title')[0].value;
       var bodyHtml = $('.editable').html();

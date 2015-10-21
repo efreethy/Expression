@@ -19,7 +19,7 @@
     },
 
     render: function () {
-
+    
       return (
         <div className="landing-page-container">
           <LandingPageLeft user={this.state.user}/>
