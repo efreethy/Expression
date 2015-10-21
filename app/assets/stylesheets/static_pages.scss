@@ -32,7 +32,24 @@ div.editable
     -webkit-appearance:none;
 }
 
+.sign-in-text {
+  margin-left: 10px;
+  display: inline;
+}
+.sign-in-box {
+  margin-top: 30px;
+}
+.sign-up-text {
+  margin-left: 10px;
+  display: inline;
+}
 
+.front-page-box-top {
+  border-bottom: solid 2px #4B9B4F;
+}
+.front-page-logo {
+  padding-bottom: 5px;
+}
 input {
   margin: 0;
   padding: 0;
