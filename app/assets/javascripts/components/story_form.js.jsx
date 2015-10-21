@@ -44,7 +44,7 @@
       return (
         <div>
           <div className="story-form-container">
-            Post a Story
+             <p className="post-a-story"> Post a Story </p>
             <br/>
             <input type="text" className="post-title story-content"
                     placeholder="Title"/>
