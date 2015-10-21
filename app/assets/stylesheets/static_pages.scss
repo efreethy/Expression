@@ -317,7 +317,6 @@ div.story-content.write-here {
 }
 
 .story-banner-image {
-    border: solid purple 2px;
     height: 325px;
     background-position: center;
 }
@@ -479,6 +478,7 @@ div.upload-img-btn:hover {
 
 .story-badge-container {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .story-badge-right {
@@ -614,10 +614,37 @@ input.form-control.nav-bar-search {
   margin-top: 5px;
 }
 
+.story-show-header:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .landing-page-feed-index {
   margin-top: 5px;
   border-top: solid 1px #dddddd;
 }
 .entire-story-form-header {
   margin-bottom: 20px;
+}
+
+.glyphicon.glyphicon-heart {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.glyphicon.glyphicon-heart:hover {
+  color: #57ad68;
+}
+
+.favorite-button-show-page {
+  float: right;
+  margin-top: 20px;
+  font-weight: 100;
+  letter-spacing: .05em;
+  color: gray;
+}
+
+.story-badge-show {
+  float: left;
 }

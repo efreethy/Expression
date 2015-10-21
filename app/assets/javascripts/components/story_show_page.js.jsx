@@ -36,7 +36,7 @@
 
     render: function () {
 
-      var tags = this.state.story.tags.map(function (tag) {return tag.name});
+      var tags = this.state.story.tags.map(function (tag) {return tag.name;});
 
       return (
         <div>
@@ -47,8 +47,11 @@
           </div>
 
           <div className="story-show-page">
-
-            <StoryBadge story={this.state.story} /><br/><br/><br/>
+          <div className="story-show-header">
+            <StoryBadge classProp={"story-badge-show"} story={this.state.story} />
+            <FavoriteButton />
+          </div>
+          <br/><br/><br/><br/>
               <div className="story-content">
 
                 <div dangerouslySetInnerHTML={{__html: this.state.story.body}} />
