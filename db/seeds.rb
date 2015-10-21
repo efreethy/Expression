@@ -2,7 +2,7 @@ User.create!({username: "sparks", password: "password",prof_image_url: "http://r
 User.create!({username: "Evan Freethy", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445451834/torsion_torus_ycfoty.jpg"})
 User.create!({username: "InVision", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445450790/inVision_tuujqn.png"})
 User.create!({username: "Chris Stang", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445447820/chris-stang_glgnpo.jpg"})
-User.create!({username: "Luks Piekut", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445451834/torsion_torus_ycfoty.jpg"})
+User.create!({username: "Luks Piekut", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445449751/luks-piekut_ue7qwh.jpg"})
 
 Tag.create!([
   {name: "music"},
@@ -69,22 +69,3 @@ User.find_by_username("Evan Freethy").stories.create!([
    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445451937/first-down-line_y65tb9.jpg"}
 ])
 User.find_by_username("Evan Freethy").stories[0].tags = [Tag.find_by_name("technology"), Tag.find_by_name("Augmented Reality"), Tag.find_by_name("Computer Vision")]
-
-# Following.create!([
-#   {user_id: 2, follower_id: 1},
-#   {user_id: 28, follower_id: 27},
-#   {user_id: 30, follower_id: 28},
-#   {user_id: 29, follower_id: 28},
-#   {user_id: 28, follower_id: 33},
-#   {user_id: 30, follower_id: 33}
-# ])
-#
-# Story.create!([
-#   {title: "Building with React", body: "<h3>I <i>have news </i>for <b>you.</b></h3><p><b><br></b></p><h4>Building stuff in React is fun. There are so many things you can do. The possibilities are endless.</h4>",
-#    author_id: 28,
-#    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445446273/spacemetaio_tfywku.jpg"},
-#   {title: "Has NASA’s Kepler Mission Discovered an Alien Megastructure?",
-#    body: "<p>NASA’s Kepler Space Telescope is tasked with finding small, rocky worlds orbiting distant stars. However, exoplanets aren’t the only thing Kepler can detect — stellar flares, star spots and dusty planetary rings can also pop up in the mission’s observations.</p><p>But there’s also been speculation that Kepler may have the ability to detect more than natural phenomena; if they’re out there, Kepler may also detect the signature of <i>artificial structures</i> orbiting other stars. Imagine an advanced civilization that’s well up on the <u><b>Kardashev scale</b></u> and has the ability to harness energy directly from its star. This hypothetical alien civilization may want to construct vast megastructures, like supersized solar arrays in orbit around their host star, that could be so big that they blot out a sizable fraction of starlight as they pass in front.</p><p>The next step is to point a radio antenna at KIC 8462852, just to see whether the system is generating any artificial radio signals that could indicate the presence of something we’d define as “intelligent.” Boyajian and Wright have now teamed up with Andrew Siemion, the Director of the SETI Research Center at the University of California, Berkeley, to get a radio telescope to listen into the star and if they detect an artificial signal, they will request time on the Very Large Array (VLA) to deduce whether any radio signals from that star are the chatter of an alien civilization.</p><p>It might be a long shot, and the phenomenon is more likely a clump of comets or some other natural phenomenon that we haven’t accounted for blocking star light from view, but it’s worth investigating, especially if there really is some kind of alien intelligence building structures, or perhaps, ancient structures of a civilization long-gone, around a star only 1,500 light-years away from Earth.</p><p><b><u>Article originally published on Discovery News</u></b></p>"
-#    author_id: 28,
-#    banner_image_url: nil},
-# )]
