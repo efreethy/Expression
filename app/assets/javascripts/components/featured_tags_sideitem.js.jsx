@@ -1,8 +1,8 @@
 (function (root) {
 
-  root.TagFollowSidebar = React.createClass({
+  root.FeaturedTagsSideitem = React.createClass({
 
-    _generateTagItems: function () {
+    _generateFeaturedTagItems: function () {
       var tags = this.props.tags.map(function (tag) {
         return (
           <TagItem key={tag.id} tag={tag} />
@@ -12,11 +12,11 @@
     },
 
     render: function () {
-      var tags = this._generateTagItems();
+      var tags = this._generateFeaturedTagItems();
       return (
           <div>
-            <div className="tags-you-follow">TAGS YOU FOLLOW</div>
-            {tags}
+            <div className="featured-tags">FEATURED TAGS</div>
+              {tags}
           </div>
       );
     }

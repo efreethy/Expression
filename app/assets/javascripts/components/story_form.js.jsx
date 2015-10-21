@@ -54,7 +54,7 @@
             </div>
           </div>
 
-          <div className="complete-story-module">
+          <div className="complete-story-module story-form-page">
             <UploadImageButton onSubmitPhoto={this.updatePhotoUrl} />
           <div className='publish-tags-container'>
             <div className="story-publish-btn" onClick={this.handlePublishClick}>Publish</div>

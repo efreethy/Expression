@@ -9,20 +9,27 @@
       ApiUtil.fetchSingleUser(CURRENT_USER_ID);
 
       UserStore.addUserShowChangeListener(this._onChange);
-
     },
+
     componentWillUnmount: function () {
       UserStore.removeUserShowChangeListener(this._onChange);
     },
 
+    componentWillReceiveProps: function (newProp) {
+      var tagName = newProp.tag.name;
+       this.setState({isFollowed: this._determineIfTagIsFollowed(tagName)});
+
+    },
+
    _onChange: function () {
      var tagName = this.props.tag.name;
-     var isFollowed = this._determineIfTagIsFollowed(tagName);
+     isFollowed = this._determineIfTagIsFollowed(tagName);
      if (isFollowed) {
        this.setState({isFollowed: true});
      } else {
        this.setState({isFollowed: false});
      }
+  
    },
 
    _determineIfTagIsFollowed: function (tagName) {

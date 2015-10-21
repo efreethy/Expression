@@ -8,6 +8,10 @@ a:link, a:active {
   text-decoration: none; color: #57ad68;
 }
 
+a {
+  text-decoration: none; color: #57ad68;
+}
+
 a:hover {
   color: #018E08;
 }
@@ -64,19 +68,51 @@ textarea {
   margin-top: -20px;
 }
 
-// for visibility only
+
 .landing-page-story-form {
   font-size: 16px;
+  overflow: hidden;
 }
 
-.landing-page-story-form.hidden {
-  height: 0px;
-  transition: 2s;
+.landing-page-story-form.closed {
+  height: 0;
+  transition: height .3s ease;
 }
 
-.landing-page-story-form.open {
-  height: 200px;
-  transition: 2s;
+.lp-story-display {
+
+}
+
+.lp-story-display:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.landing-page-story-form.open{
+  transition: height .3s ease;
+}
+
+.landing-page-story-form:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+div.landing-page-post-body.editable {
+  width: 420px;
+  height: 100%;
+  max-width: 420px;
+  font-size: 17px;
+  color: black;
+  top: 50%;
+  left: 27%;
+}
+
+.complete-story-module{
+  margin-top: 15px;
+  width: 500px;
+
 }
 
 .landing-page-container:before {
@@ -88,8 +124,15 @@ textarea {
 .landing-feed {
   width: 550px;
   height: 1000px;
+  margin: auto;
+}
+
+.complete-story-module.story-form-page {
+  margin-top: 15px;
+  width: 500px;
   margin: auto
 }
+
 .landing-page-left {
   float: left;
   margin-top: 15px;
@@ -118,16 +161,6 @@ textarea {
 
 .post-title {
   float: left;
-}
-
-div.landing-page-post-body.editable {
-  width: 420px;
-  height: 100px;
-  max-width: 420px;
-  font-size: 17px;
-  color: black;
-  top: 50%;
-  left: 27%;
 }
 
 div.landing-page-post-body.editable.untouched {
@@ -162,10 +195,6 @@ div.landing-page-post-body.editable.untouched {
   border-bottom: solid 1px #eee;
 }
 
-.complete-story-module{
-  margin: auto;
-  width: 500px;
-}
 
 .story-form-container:before {
   content: "";
@@ -178,7 +207,7 @@ div.landing-page-post-body.editable.untouched {
 }
 // same positioning as user-prof-page
 .story-show-page {
-    border: 1px solid purple;
+
     width: 570px;
     margin: auto;
 }
@@ -214,10 +243,11 @@ div.story-content {
   font-size: 18px;
 }
 div.story-content.write-here {
-  margin-left: 5px;
+  margin-left: 15px;
   font-family: 'Lora', serif;
   font-size: 15px;
   color: gray
+
 }
 
 .story-index-item {
@@ -402,8 +432,9 @@ div.upload-img-btn:hover {
     border-color: #a9d8b2;
     border-radius: 999em;;
     padding-top: 5px;
-    font-weight: 200;
+    font-weight: 100;
     font-size: 15px;
+    letter-spacing: .05em;
     border-radius: 999em;
 
     height: 35px;
@@ -478,6 +509,16 @@ div.story-badge-author-link{
 
 .tags-you-follow {
   width: 126px;
+  padding-top: 5px;
+  border-top: solid 1px black;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: .1em;
+}
+
+.featured-tags {
+  margin-top: 25px;
+  width: 110px;
   padding-top: 5px;
   border-top: solid 1px black;
   font-weight: 500;
