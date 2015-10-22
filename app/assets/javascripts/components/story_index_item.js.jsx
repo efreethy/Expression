@@ -9,7 +9,6 @@
     },
 
     handleClickToStoryShow: function () {
-
       this.history.pushState(null, 'users/' + this.props.story.author_id +'/stories/' + this.props.story.id);
     },
 

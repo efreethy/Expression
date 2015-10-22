@@ -397,7 +397,7 @@ div.upload-img-btn:hover {
 }
 
 .nav-bar-prof-img {
-  margin-top: 10px;
+  margin-top: 5px;
   border-radius: 51%;
   border: solid #F8F8F8 1px;
 }
@@ -525,7 +525,7 @@ div.story-badge-author-link{
 .landing-page-right {
   padding-left: 25px;
   padding-right: 25px;
-  background-color: #E3F2EB;
+  background-color: #EDF2EF;
 }
 
 .tags-you-follow {
@@ -549,6 +549,20 @@ div.story-badge-author-link{
   margin-bottom: 10px;
 }
 
+.top-stories {
+  margin-top: 25px;
+  width: 195px;
+  padding-top: 5px;
+  border-top: solid 1px black;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: .1em;
+  margin-bottom: 10px;
+}
+
+div.top-stories {
+    margin-bottom: 25px;
+}
 .navbar {
   border-bottom: solid #36AC3B 4px;
   font-weight: 100;
@@ -647,4 +661,47 @@ input.form-control.nav-bar-search {
 
 .story-badge-show {
   float: left;
+}
+
+.flw-btn-is-recommended {
+  color: #57ad68;
+}
+
+.glyphicon.glyphicon-heart.flw-btn-is-recommended:hover {
+  color: #B1E2BA;
+}
+.top-story-item {
+  margin-left: 10px;
+  margin-bottom: 10px;
+
+}
+.top-story-header-box:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+.top-story-header-box {
+  height: 30px;
+}
+
+.top-story-title-author-box {
+  font-size: 12px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.top-story-number{
+  float: left;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: 100;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 10px;
+}
+.top-story-title{
+  float: left;
+}
+.top-story-title:hover{
+  cursor: pointer;
 }

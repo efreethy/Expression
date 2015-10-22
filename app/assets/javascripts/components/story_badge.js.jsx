@@ -13,6 +13,7 @@
     },
     render: function () {
 
+    
       return (
         <div className={"story-badge-container " + this.props.classProp}>
           <div className="story-badge-prof-img">

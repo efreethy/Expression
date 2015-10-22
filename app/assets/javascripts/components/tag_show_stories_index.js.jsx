@@ -13,7 +13,7 @@
                           imageUrl: story.bannerImageUrl ,authorId: story.author.authorId,
                             id: story.id };
 
-          return (<div>
+          return (<div key={story.id}>
                   <div className="tag-show-story-badge"><StoryBadge key={story.id} story={storyObj} /></div>
                   <div className="tag-show-story-item"><StoryIndexItem key={story.id} story={storyIndexObj} /></div>
                   </div>);

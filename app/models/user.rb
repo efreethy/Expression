@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :recommendations
+  has_many :recommended_stories, through: :recommendations, source: :story
+
   has_many(
     :followers,
     class_name: 'Following',

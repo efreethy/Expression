@@ -6,6 +6,13 @@ var ApiActions = {
     });
   },
 
+  receiveTopStories: function (stories) {
+    AppDispatcher.dispatch({
+      actionType: StoryConstants.TOP_STORIES_RECEIVED,
+      data: stories
+    });
+  },
+
   receiveSingleStory: function(story){
     AppDispatcher.dispatch({
       actionType: StoryConstants.STORY_RECIEVED,
@@ -45,6 +52,13 @@ var ApiActions = {
    AppDispatcher.dispatch({
      actionType: UserConstants.NEW_FOLLOWERS_RECEIVED,
      data: followers
+   });
+ },
+
+ receiveNewRecommenders: function (newRecommenders) {
+   AppDispatcher.dispatch({
+     actionType: StoryConstants.NEW_RECOMMENDERS_RECEIVED,
+     data: newRecommenders
    });
  }
 };

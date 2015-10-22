@@ -4,11 +4,11 @@
     getInitialState: function () {
 
       return {story: {id: "", title: "", body: "", created_at: "",
-                      author: { name: "",profImageUrl: "", id: ""}, tags: []}};
+                      author: { name: "",profImageUrl: "", id: ""},
+                      tags: [], recommenders: []}};
     },
 
     componentWillMount: function () {
-
       ApiUtil.fetchSingleStory(this.props.params.user_id, this.props.params.id);
       StoryStore.addAuthorStoryShowChangeListener(this._onChange);
     },
@@ -34,9 +34,25 @@
       $('.story-banner-image').css("background-size", "cover");
     },
 
+    determineIfRecommendedByCurrentUser: function () {
+      var isRecommended = false;
+      this.state.story.recommenders.forEach(function (user) {
+        if (user.id === CURRENT_USER_ID) {
+          isRecommended = true;
+        }
+      });
+      return isRecommended;
+    },
+
+    getRecommenderCount: function () {
+      return this.state.story.recommenders.length;
+    },
+
     render: function () {
 
       var tags = this.state.story.tags.map(function (tag) {return tag.name;});
+      var isRecommended = this.determineIfRecommendedByCurrentUser();
+      var recommenderCount = this.getRecommenderCount();
 
       return (
         <div>
@@ -49,7 +65,7 @@
           <div className="story-show-page">
           <div className="story-show-header">
             <StoryBadge classProp={"story-badge-show"} story={this.state.story} />
-            <FavoriteButton />
+            <FavoriteButton story_id={this.state.story.id} isRecommended={isRecommended} recommenderCount={recommenderCount}/>
           </div>
           <br/><br/><br/><br/>
               <div className="story-content">

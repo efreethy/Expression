@@ -26,7 +26,7 @@
       var authorStories = this.state.authorStories.map(function (story) {
         return <StoryIndexItem key={story.id} story={story} />
       });
-
+      
       return (
       <div >
         <p className="latest-stories-block">LATEST STORIES</p>

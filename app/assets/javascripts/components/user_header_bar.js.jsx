@@ -8,6 +8,7 @@
     },
 
     componentWillMount: function () {
+      ApiUtil.fetchSingleUser(CURRENT_USER_ID);
       UserStore.addSingleUserShowChangeListener(this._onChange);
     },
 
@@ -21,9 +22,9 @@
 
     handleFollowButtonClick: function () {
       if (this.isFollowing) {
-        ApiUtil.deleteUserFollowing(CURRENT_USER_ID, this.state.user.id)
+        ApiUtil.deleteUserFollowing(CURRENT_USER_ID, this.state.user.id);
       } else {
-        ApiUtil.createUserFollowing(CURRENT_USER_ID, this.state.user.id)
+        ApiUtil.createUserFollowing(CURRENT_USER_ID, this.state.user.id);
       }
     },
 
@@ -33,16 +34,15 @@
     },
 
     determineIfFollowing: function () {
-      this.isFollowing = false;
+        this.isFollowing = false;
       if (typeof UserStore.userShow() !== "undefined") {
-        var user = UserStore.userShow();
-        user.followers.forEach(function (user) {
-          if (user.username === UserStore.singleUser().username) {
+        var userShow = UserStore.userShow();
+        userShow.followers.forEach(function (user) {
+          if (user.username === CURRENT_USER_NAME) {
             this.isFollowing = true;
           }
         }.bind(this));
       }
-      return this.isFollowing;
     },
 
     render: function () {

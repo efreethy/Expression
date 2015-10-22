@@ -39,7 +39,7 @@
 
     handleClickToProfile: function (e) {
         e.preventDefault();
-        this.history.pushState(null, 'users/' + root.CURRENT_USER_ID)
+        this.history.pushState(null, 'users/' + root.CURRENT_USER_ID);
     },
 
     handleClickToHome: function (e) {
@@ -79,12 +79,7 @@
           </ul>
 
           <ul className="nav navbar-nav navbar-right">
-            <li> <form className="navbar-form navbar-left" role="search">
-              <div className="form-group">
-                <input type="text" className="form-control nav-bar-search" placeholder="Search Expression"/>
-              </div>
-              <button type="submit" className="btn btn-default glyphicon glyphicon-search"></button>
-            </form></li>
+          <SearchBar />
               <li onClick={this.handleWriteStoryClick}><a href="javascript:void(0)">Write a Story</a></li>
 
             <li onClick={this.handleClickToProfile}><ProfileImage classProp={"nav-bar-prof-img"} width={35} height={35} imageUrl={this.state.result.prof_image_url}/></li>

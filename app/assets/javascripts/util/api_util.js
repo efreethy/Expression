@@ -2,7 +2,6 @@ var ApiUtil = {
 
 
   fetchAuthorStories: function (author_id) {
-
     $.ajax({
       url: '/api/users/' + author_id +'/stories',
       method: 'GET',
@@ -11,6 +10,18 @@ var ApiUtil = {
       success: function (authorStories) {
 
         ApiActions.receiveAll(authorStories);
+      }
+    });
+  },
+
+  fetchTopStories: function () {
+    $.ajax({
+      url: '/api/users/' + CURRENT_USER_ID + '/stories/',
+      method: 'GET',
+      dataType: 'JSON',
+      data: {type: 'fetchTopStories'},
+      success: function (stories) {
+        ApiActions.receiveTopStories(stories);
       }
     });
   },
@@ -74,7 +85,7 @@ var ApiUtil = {
       dataType: 'JSON',
       data: {user: { profImageUrl: profImageUrl, currentUserId: CURRENT_USER_ID}},
       success: function (user) {
-        ApiActions.receiveSingleUser(user);
+        ApiActions.receiveSingleUserShow(user);
       }
     });
   },
@@ -134,6 +145,30 @@ var ApiUtil = {
       data: {follower_id: follower_id, followed_id: followed_id},
       success: function (followers) {
         ApiActions.receiveNewFollowers(followers);
+      }
+    });
+  },
+
+  deleteRecommendation: function (story_id, user_id) {
+    $.ajax({
+      url: '/api/recommendations/'+story_id,
+      method: 'DELETE',
+      dataType: 'JSON',
+      data: {story_id: story_id, user_id: user_id},
+      success: function (newRecommenders) {
+        ApiActions.receiveNewRecommenders(newRecommenders);
+      }
+    });
+  },
+
+  createRecommendation: function (story_id, user_id) {
+    $.ajax({
+      url: '/api/recommendations/',
+      method: 'POST',
+      dataType: 'JSON',
+      data: {story_id: story_id, user_id: user_id},
+      success: function (newRecommenders) {
+        ApiActions.receiveNewRecommenders(newRecommenders);
       }
     });
   }

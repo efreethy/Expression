@@ -15,6 +15,9 @@ class Story < ActiveRecord::Base
 
   has_many :story_taggings
 
+  has_many :recommendations
+  has_many :all_users_who_recommend , through: :recommendations, source: :user
+
   has_many(
     :tags,
     through: :story_taggings,

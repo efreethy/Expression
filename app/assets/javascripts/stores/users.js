@@ -59,7 +59,9 @@
        break;
        case UserConstants.USER_SHOW_RECEIVED:
        _setUserShow(payload.data);
+       _addSingleUser(payload.data);
        UserStore.emit(USER_SHOW_CHANGE_EVENT);
+       UserStore.emit(SINGLE_USER_CHANGE_EVENT);
        break;
        case UserConstants.NEW_FOLLOWERS_RECEIVED:
        _resetUserFollowers(payload.data);

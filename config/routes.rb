@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :tags, only: [:show]
     resources :user_taggings, only: [:create, :destroy]
     resources :followings, only: [:create, :destroy]
+    resources :recommendations, only: [:create, :destroy]
     resources :stories, only: [:new]
     resources :users, only: [:new] do
       resources :stories, only: [:create, :show, :index] do
