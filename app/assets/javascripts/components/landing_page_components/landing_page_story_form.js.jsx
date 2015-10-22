@@ -4,7 +4,9 @@
     mixins: [ReactRouter.History],
 
     getInitialState: function () {
-      return { toggleHeaderText: "Write Here", storyFormDisplay: "closed", formClicked: false,title: "", body: ""};
+      return { toggleHeaderText: "Write Here", storyFormDisplay: "closed",
+               formClicked: false,title: "", body: "",
+               storyFormError: false };
     },
 
     onTitleChange: function (e) {
@@ -19,13 +21,18 @@
    componentDidMount: function () {
       var editor = new MediumEditor('.editable');
     },
-    
+
     handlePublishClick: function () {
       var postTitle = $('.landing-page-post-title')[0].value;
       var bodyHtml = $('.editable').html();
       var tagsArray = $('#tag-adder').tokenize().toArray();
       var bannerUrl = this.state.bannerImageUrl;
-      ApiUtil.createStory(postTitle, bodyHtml, tagsArray,  bannerUrl);
+      if (postTitle !== "") {
+        ApiUtil.createStory(postTitle, bodyHtml, tagsArray,  bannerUrl);
+        this.setState({ storyFormDisplay: "closed", toggleHeaderText: "Write Here"});
+      } else {
+        this.setState({ storyFormError: true});
+      }
     },
 
     updatePhotoUrl: function (url) {
@@ -38,7 +45,7 @@
         // $('.editable.landing-page-post-body').text("");
         // $('.editable.landing-page-post-body').focus();
         $('.untouched').removeClass("untouched");
-        this.setState({formClicked: true}, function () { var editor = new MediumEditor('.editable') } );
+        this.setState({formClicked: true}, function () { var editor = new MediumEditor('.editable'); } );
       } else { this.setState({formClicked: false}); }
     },
 
@@ -57,13 +64,14 @@
       }
     },
 
-    render: function () {
+    determineFormContents: function (errorMessage) {
+      var contents;
       if ( this.state.storyFormDisplay === "open") {
-        var contents = (
+        contents = (
           <div>
             <div className="lp-story-display">
             <input type="text" className="landing-page-post-title"
-                    onChange={this.onTitleChange} placeholder="Title" value={this.state.title}/>
+                    onChange={this.onTitleChange} placeholder="Title" value={this.state.title}/>{errorMessage}
 
              <div onClick={this.handleStoryFormClick} className="untouched editable landing-page-post-body story-content"  >
                 Body...
@@ -80,10 +88,29 @@
               </div>
             </div>
         );
-      } else {var contents = ""; }
+      } else { contents = ""; }
+      return contents;
+    },
+
+    determineErrorMessage: function () {
+      var message;
+      if ( this.state.storyFormError === true) {
+
+        setTimeout(function () { this.setState({storyFormError: false}); }.bind(this),3000);
+        return <div className="lp-please-enter-title">Please enter a title</div>;
+      } else {
+        message = <div></div>;
+      }
+      return message;
+    },
+
+    render: function () {
+      var errorMessage = this.determineErrorMessage();
+      var contents = this.determineFormContents(errorMessage);
 
       return (
         <div className="entire-story-form-header">
+
           <div onClick={this.toggleStoryFormClick}clasName="story-form-toggle-header">
             <ProfileImage width={45} height={45} imageUrl={this.props.user.prof_image_url} />
             <div style={{"display": "inline"}} className={'write-here story-content ' + this.state.storyFormDisplay} >{this.state.toggleHeaderText}</div>

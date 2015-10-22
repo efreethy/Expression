@@ -179,6 +179,7 @@ div.landing-page-post-body.editable {
 .post-title {
   float: left;
   width: 800px;
+  position: relative;
 }
 
 div.landing-page-post-body.editable.untouched {
@@ -704,4 +705,29 @@ input.form-control.nav-bar-search {
 }
 .top-story-title:hover{
   cursor: pointer;
+}
+
+.lp-please-enter-title {
+  display: inline;
+  padding: 3px;
+  width: 45px;
+  height: 25px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: .05em;
+  font-weight: 100;
+  border-bottom: solid red 1px;
+}
+
+.story-form-please-enter-title {
+  position: relative;
+  left: 400px;
+  top: 5px;
+  width: 130px;
+  height: 20px;
+  font-size: 15px;
+  letter-spacing: .05em;
+  font-weight: 100;
+  border-bottom: solid red 1px;
+  padding-left: 2px;
 }

@@ -4,7 +4,8 @@
   root.StoryForm = React.createClass({
     mixins: [ReactRouter.History],
     getInitialState: function () {
-      return { formClicked: false, bannerImageUrl: "https://res.cloudinary.com/efreezy/image/upload/v1444957128/uboghlrcb4hri2qv7bah.jpg" };
+      return { formClicked: false, bannerImageUrl: "https://res.cloudinary.com/efreezy/image/upload/v1444957128/uboghlrcb4hri2qv7bah.jpg",
+              storyFormError: false };
     },
 
     componentDidMount: function () {
@@ -22,9 +23,13 @@
       var bodyHtml = $('.editable').html();
       var tagsArray = $('#tag-adder').tokenize().toArray();
       var bannerUrl = this.state.bannerImageUrl;
+      if (postTitle !== "") {
+        ApiUtil.createStory(postTitle, bodyHtml, tagsArray, bannerUrl, CURRENT_USER_ID);
+        this.history.pushState(null, '/');
+      } else {
+        this.setState({ storyFormError: true});
+      }
 
-      ApiUtil.createStory(postTitle, bodyHtml, tagsArray, bannerUrl, CURRENT_USER_ID);
-      this.history.pushState(null, '/');
     },
 
     updatePhotoUrl: function (url) {
@@ -35,19 +40,32 @@
       if (this.state.formClicked === false) {
         $('.editable.story-content.story-body').text("");
         $('.untouched').removeClass("untouched");
-        this.setState({formClicked: true})
+        this.setState({formClicked: true});
       }
     },
 
-    render: function () {
+    determineErrorMessage: function () {
+      var message;
+      if ( this.state.storyFormError === true) {
+        setTimeout(function () { this.setState({storyFormError: false}); }.bind(this),3000);
+        return <div className="story-form-please-enter-title">Please enter a title.</div>;
+      } else {
+        message = <div></div>;
+      }
+      return message;
+    },
 
+    render: function () {
+        var errorMessage = this.determineErrorMessage();
       return (
         <div>
           <div className="story-form-container">
              <p className="post-a-story"> Post a Story </p>
             <br/>
+            <div>
             <input type="text" className="post-title story-content"
                     placeholder="Title"/>
+            </div>
             <br/>
             <div onClick={this.handleStoryFormClick} className="editable story-content story-body" >
               Body..
@@ -61,6 +79,7 @@
             </div>
             <TagAdder />
           </div>
+          {errorMessage}
          </div>
 
         );

@@ -38,6 +38,9 @@ var ApiUtil = {
   },
 
   createStory: function (postTitle, bodyHtml, tagsArray, bannerImageUrl) {
+    if (typeof bannerImageUrl === "undefined") {
+      bannerImageUrl = 'http://res.cloudinary.com/efreezy/image/upload/v1444957128/uboghlrcb4hri2qv7bah.jpg';
+    }
 
     $.ajax({
       type: "POST",
