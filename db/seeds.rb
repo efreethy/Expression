@@ -69,3 +69,6 @@ User.find_by_username("Evan Freethy").stories.create!([
    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445451937/first-down-line_y65tb9.jpg"}
 ])
 User.find_by_username("Evan Freethy").stories[0].tags = [Tag.find_by_name("technology"), Tag.find_by_name("Augmented Reality"), Tag.find_by_name("Computer Vision")]
+User.find_by_username("Evan Freethy").stories[0].all_users_who_recommend =
+    [User.find_by_username("Chris Stang"), User.find_by_username("InVision"),
+      User.find_by_username("sparks"),  User.find_by_username("Luks Piekut")]
