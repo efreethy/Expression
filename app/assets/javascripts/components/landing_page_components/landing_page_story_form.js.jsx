@@ -45,7 +45,11 @@
         // $('.editable.landing-page-post-body').text("");
         // $('.editable.landing-page-post-body').focus();
         $('.untouched').removeClass("untouched");
-        this.setState({formClicked: true}, function () { var editor = new MediumEditor('.editable'); } );
+        this.setState({formClicked: true}, function () {
+          if (typeof editor === "undefined") {
+           var editor = new MediumEditor('.editable');
+         }
+        });
       } else { this.setState({formClicked: false}); }
     },
 
