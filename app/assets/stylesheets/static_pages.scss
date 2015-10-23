@@ -80,7 +80,6 @@ textarea {
 }
 
 .landing-page-container {
-  position: relative;
   min-width: 300px;
   margin-top: -20px;
 }
@@ -568,6 +567,8 @@ div.top-stories {
   border-bottom: solid #36AC3B 4px;
   font-weight: 100;
   color: black;
+  height: 55px;
+  position: relative;
 }
 .navbar-brand {
   margin-top: -10px;
@@ -730,4 +731,10 @@ input.form-control.nav-bar-search {
   font-weight: 100;
   border-bottom: solid red 1px;
   padding-left: 2px;
+}
+
+.search-results {
+  position: absolute;
+  width: 250px;
+  background-color: white;
 }

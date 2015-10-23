@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: {format: :json} do
+    resources :global_searches, only: [:index]
     resources :tags, only: [:show]
     resources :user_taggings, only: [:create, :destroy]
     resources :followings, only: [:create, :destroy]

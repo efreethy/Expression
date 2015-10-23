@@ -1,5 +1,16 @@
 var ApiUtil = {
 
+  fetchSearchResults: function (queryText) {
+    $.ajax({
+      url: 'api/global_searches',
+      method: 'GET',
+      dataType: 'JSON',
+      data: {query_text: queryText},
+      success: function (results) {
+        ApiActions.receiveSearchResults(results);
+      }.bind(this)
+    });
+  },
 
   fetchAuthorStories: function (author_id) {
     $.ajax({
@@ -8,7 +19,6 @@ var ApiUtil = {
       dataType: 'JSON',
       data: {author_id: author_id},
       success: function (authorStories) {
-
         ApiActions.receiveAll(authorStories);
       }
     });

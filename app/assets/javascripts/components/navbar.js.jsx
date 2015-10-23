@@ -4,7 +4,7 @@
     mixins: [ReactRouter.History],
 
     getInitialState: function () {
-      return {username: "", result: { prof_image_url: ""}};
+      return {username: "", result: { prof_image_url: ""}, searchResults: ""};
     },
 
     _onChange: function () {
@@ -59,9 +59,16 @@
       });
     },
 
+    handleResults: function (results) {
+      if (results.length > 0) {
+        this.setState({searchResults: results});
+      }
+    },
+
     render: function () {
 
       return (
+        <div>
         <nav className="navbar navbar-default">
       <div className="container-fluid">
 
@@ -79,7 +86,7 @@
           </ul>
 
           <ul className="nav navbar-nav navbar-right">
-          <SearchBar />
+          <SearchBar giveResultsToParent={this.handleResults} />
               <li onClick={this.handleWriteStoryClick}><a href="javascript:void(0)">Write a Story</a></li>
 
             <li onClick={this.handleClickToProfile}><ProfileImage classProp={"nav-bar-prof-img"} width={35} height={35} imageUrl={this.state.result.prof_image_url}/></li>
@@ -96,6 +103,8 @@
         </div>
       </div>
     </nav>
+    {this.state.results}
+    </div>
       );
     }
   }

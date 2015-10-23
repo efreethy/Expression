@@ -1,4 +1,11 @@
 var ApiActions = {
+  receiveSearchResults: function(results){
+    AppDispatcher.dispatch({
+      actionType: SearchResultsConstants.SEARCH_RESULTS_RECEIVED,
+      data: results
+    });
+  },
+
   receiveAll: function(authorStories){
     AppDispatcher.dispatch({
       actionType: StoryConstants.AUTHOR_STORIES_RECEIVED,

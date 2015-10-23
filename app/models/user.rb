@@ -56,6 +56,7 @@ class User < ActiveRecord::Base
     source: :tag
   )
 
+
   attr_reader :password
   def password=(password)
     @password = password
