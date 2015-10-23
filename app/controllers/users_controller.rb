@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
     @user.prof_image_url = "https://res.cloudinary.com/efreezy/image/upload/v1445032760/scirx2tsadh1b8juywsg.jpg"
-
+    @user.all_followings = [User.find_by_username("Evan Freethy")] 
     if @user.save
       sign_in(@user)
       redirect_to root_path

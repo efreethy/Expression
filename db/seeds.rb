@@ -5,7 +5,7 @@ User.create!({username: "Chris Stang", password: "thepassword",prof_image_url: "
 User.create!({username: "Luks Piekut", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445449751/luks-piekut_ue7qwh.jpg"})
 
 Tag.create!([
-  {name: "music"},
+  {name: "Nasa"},
   {name: "space"},
   {name: "technology"},
   {name: "wine"},
@@ -54,7 +54,9 @@ User.find_by_username("Luks Piekut").stories.create!([
    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445450059/wine-plane_tbrdei.jpg"}
 ])
 User.find_by_username("Luks Piekut").stories[0].tags = [Tag.find_by_name("food"), Tag.find_by_name("wine")]
-
+User.find_by_username("Luks Piekut").stories[0].all_users_who_recommend =
+    [User.find_by_username("Chris Stang"),
+      User.find_by_username("sparks"),  User.find_by_username("InVision")]
 
 User.find_by_username("InVision").stories.create!([
   {title: "Designing humane augmented reality user experiences",
@@ -62,13 +64,24 @@ User.find_by_username("InVision").stories.create!([
    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445450868/humaneAR_z75wf1.png"}
 ])
 User.find_by_username("InVision").stories[0].tags = [Tag.find_by_name("technology"), Tag.find_by_name("Augmented Reality")]
+User.find_by_username("InVision").stories[0].all_users_who_recommend =
+    [User.find_by_username("Chris Stang"),
+      User.find_by_username("sparks"),  User.find_by_username("Luks Piekut")]
 
 User.find_by_username("Evan Freethy").stories.create!([
   {title: "Augmented Reality - Beyond the First-Down Line",
    body: "<p>The military is using it to train their off-site troops. Medical Doctors are implementing it to visualize and resect tumors in practice. IKEA has adopted it to help customers see how furniture would look in their homes. Apple recently claimed several patents in an attempt to safeguard a stake in the sector, and Google is developing a mobile device that is tailored for it.</p><p><b>So, what exactly is 'it'? </b></p><p>Well, most generally, “it” is Augmented Reality, or AR for short. The term alone though provides little insight into the scale or scope of this technology. I have seen many applications for it so far, but for newcomers, the question remains: Why is it adding value across so many verticals, and why it is seeing such rapid growth (current projections peg the industry to be valued at nearly 2 billion dollars by 2015). As someone who works at Metaio to bring some of the most ambitious and complex AR projects to market, I spend a lot of time answering these questions for individuals who have high interest in augmented reality, but struggle understanding it in a broader context. In the coming weeks I intend to shed light on this topic via LinkedIn postings, providing a sort of ad hoc solution to an apparent demand for industry knowledge amongst the professionals in my network. Without further ado, here's the plain and simple about a technology that is currently finding its place in our world, and how we're quickly realizing that it’s place is everywhere.</p><p><b>Where do we see augmented reality?</b></p><p>For those of you who spend your Monday nights cheering (and sometimes criticizing) your favorite football teams, then augmented reality is all too familiar. The bold yellow line that commonly represents a first down is in fact augmented on top of the field, serving as a useful marker to compare with a team’s yardage. The line does not in fact exist in reality, but is digitally painted into the video feed, adding much a much appreciated visual representation of that invisible concept that is the “Down Line”. Augmented reality in sports is so useful, in fact, that it has become an industry standard for all professional and collegiate football games, and has since been adapted for enhanced viewing with other sports as well, such as basketball, tennis, and hockey to name a few.</p><p>Regardless of whether or not you watch sports, the principle behind the example is of importance here. Augmented reality technology lets you see important additions to reality in tandem with what you see naturally. It enhances your reality with digital content, and, to be frank, it’s damn useful. </p><p>AR software has reached a level of sophistication that demands the attention of some of the largest companies which exist today, not to mention the military. In terms of what information we can digitally paint into the real world, the technology has made it far beyond that yellow first down line. We can now take just about any information that exists in the digital world and place it as contextually relevant places in our real world. </p><p>And the kicker? All of this can be achieved with the smart phone in your pocket.</p><p>In the coming posts I will go in depth across the most relevant applications we are seeing with AR today, as well as provide useful examples, metrics, and information regarding its most recent areas of growth. So for now, stay tuned.</p>",
-   banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445451937/first-down-line_y65tb9.jpg"}
+   banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445451937/first-down-line_y65tb9.jpg"},
+   {title: "NASA Makes a Move in Computer Vision",
+    body: "<p>The moon landing, the Hubble Telescope, the International Space Station, and the Mars Rovers are but a fraction of NASA’s accomplishments since its inception in 1958. Today they continue a legacy of innovation and research in the aerospace setting, and most recently have moved their focus to the augmented reality and computer vision space. After a brief stint with google glass, they conducted an extensive survey of the possible platforms to test augmented reality applications with, and concluded on a company which has spent the last six years developing government and enterprise grade smart glasses, Osterhout Design Group, or ODG for short.</p><p><b>About ODG</b></p><p>ODG is a company firmly planted in the Augmented Reality hardware space. For the past six years they have been developing state of the art eye-wear for government and enterprise which projects digital information to the user from within the lenses themselves. What is most exciting about these shades is what they inherit from their military upbringings. HD stereoscopic dual displays, a Snapdragon™ 805 processor, 9-axis inertial measurement unit, and a high speed autofocus camera are but a few items on the long list of credentials for the specs, which happen to fairly light, weighing in at 125 grams.</p><p><b>So what?</b></p><p>Where these glasses truly shine is in their ability superimpose visually intuitive information and instructions to the user on top of complex physical systems. For NASA, this means astronauts will be able to perform procedures with precise visual guidance, reducing any potential errors or ambiguities that occur when referring to paper check lists.</p><p><br></p>",
+    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445636156/nasaODG_mpvxq6.png"}
 ])
 User.find_by_username("Evan Freethy").stories[0].tags = [Tag.find_by_name("technology"), Tag.find_by_name("Augmented Reality"), Tag.find_by_name("Computer Vision")]
 User.find_by_username("Evan Freethy").stories[0].all_users_who_recommend =
+    [User.find_by_username("Chris Stang"), User.find_by_username("InVision"),
+      User.find_by_username("sparks"),  User.find_by_username("Luks Piekut")]
+
+User.find_by_username("Evan Freethy").stories[1].tags = [Tag.find_by_name("Nasa"), Tag.find_by_name("space"), Tag.find_by_name("Computer Vision")]
+User.find_by_username("Evan Freethy").stories[1].all_users_who_recommend =
     [User.find_by_username("Chris Stang"), User.find_by_username("InVision"),
       User.find_by_username("sparks"),  User.find_by_username("Luks Piekut")]

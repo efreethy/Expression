@@ -50,6 +50,7 @@
         return (
           <div key={idx} >
             <div onClick={this.handleSearchClick}className="search-result-item"><div className="glyphicon glyphicon-tag"></div>
+
             <Link to={"tags/"+tag.id}>{tag.name}</Link>
             </div>
           </div>
@@ -70,7 +71,7 @@
       var wrappedUsers = ([<div key={"wrappedUsers"}><div className="search-header">USERS</div>{users}</div>]);
       var wrappedTags = ([<div key={"wrappedTags"}><div className="search-header">TAGS</div>{tags}</div>]);
       var wrappedStories = ([<div key={"wrappedStories"}><div className="search-header">STORIES</div>{stories}</div>]);
-      var wrappedResults = [<div className="wrapped-search-results">{wrappedUsers.concat(wrappedStories).concat(wrappedTags)}</div>];
+      var wrappedResults = [<div key={"wrappedResults"} className="wrapped-search-results">{wrappedUsers.concat(wrappedStories).concat(wrappedTags)}</div>];
       return (wrappedResults);
     },
 
