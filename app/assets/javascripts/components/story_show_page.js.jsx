@@ -72,7 +72,7 @@
 
                 <div dangerouslySetInnerHTML={{__html: this.state.story.body}} />
                </div>
-              <StoryTags tags={tags}/>
+              <StoryTagsAndBookmark tags={tags}/>
           </div>
         </div>
 

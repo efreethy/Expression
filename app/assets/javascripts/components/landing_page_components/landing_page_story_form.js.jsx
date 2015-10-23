@@ -45,6 +45,9 @@
         // $('.editable.landing-page-post-body').text("");
         // $('.editable.landing-page-post-body').focus();
         $('.untouched').removeClass("untouched");
+        // if ( $('.landing-page-post-body').text() === "Body...") {
+        //   $('.landing-page-post-body').text(" ");
+        // }
         this.setState({formClicked: true}, function () {
           if (typeof editor === "undefined") {
            var editor = new MediumEditor('.editable');

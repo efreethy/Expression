@@ -1,6 +1,6 @@
 (function (root) {
 
-  root.StoryTags = React.createClass({
+  root.StoryTagsAndBookmark = React.createClass({
     getInitialState: function () {
       return {tags: this.props.tags}
     },

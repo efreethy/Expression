@@ -8,6 +8,7 @@
     componentWillMount: function () {
       SearchResultsStore.addSearchResultsChangeListener(this._onChange);
     },
+
     componentWillUnmount: function () {
       SearchResultsStore.removeSearchResultsChangeListener(this._onChange);
     },
@@ -33,9 +34,9 @@
     },
 
     makeResults: function (results) {
-      var users = this.state.results.users.map(function (user) {
+      var users = this.state.results.users.map(function (user, idx) {
         return (
-          <div>
+          <div key={idx}>
             <div onClick={this.handleSearchClick} className="search-result-item">
             <ProfileImage classProp="search-result-prof-image" width={30} height={30} imageUrl={user.profImageUrl} />
             <Link to={"users/"+user.id}>{user.username}</Link>
@@ -44,10 +45,10 @@
         );
       }.bind(this));
 
-      var tags = this.state.results.tags.map(function (tag) {
+      var tags = this.state.results.tags.map(function (tag, idx) {
 
         return (
-          <div>
+          <div key={idx} >
             <div onClick={this.handleSearchClick}className="search-result-item"><div className="glyphicon glyphicon-tag"></div>
             <Link to={"tags/"+tag.id}>{tag.name}</Link>
             </div>
@@ -55,20 +56,20 @@
         );
       }.bind(this));
 
-      var stories = this.state.results.stories.map(function (story) {
+      var stories = this.state.results.stories.map(function (story, idx) {
         var storyText;
         if (story.title.length > 30) { storyText = (story.title.slice(0,30) + "..."); } else  {storyText = story.title;}
         return (
-          <div>
+          <div key={idx}>
             <div onClick={this.handleSearchClick} className="search-result-item story">
             <Link to={"users/"+story.author_id+ "/stories/"+story.id}>{storyText}</Link></div>
           </div>
         );
       }.bind(this));
 
-      var wrappedUsers = ([<div><div className="search-header">USERS</div>{users}</div>]);
-      var wrappedTags = ([<div><div className="search-header">TAGS</div>{tags}</div>]);
-      var wrappedStories = ([<div><div className="search-header">STORIES</div>{stories}</div>]);
+      var wrappedUsers = ([<div key={"wrappedUsers"}><div className="search-header">USERS</div>{users}</div>]);
+      var wrappedTags = ([<div key={"wrappedTags"}><div className="search-header">TAGS</div>{tags}</div>]);
+      var wrappedStories = ([<div key={"wrappedStories"}><div className="search-header">STORIES</div>{stories}</div>]);
       var wrappedResults = [<div className="wrapped-search-results">{wrappedUsers.concat(wrappedStories).concat(wrappedTags)}</div>];
       return (wrappedResults);
     },

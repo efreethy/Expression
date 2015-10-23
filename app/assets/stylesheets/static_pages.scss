@@ -405,6 +405,13 @@ div.upload-img-btn:hover {
 .nav-bar-prof-img:hover {
   border: solid #57ad68 1px;
 }
+
+.story-tags-container {
+  margin-bottom: 200px;
+  margin-top: 20px;
+  width: 100%
+}
+
 .tag-show-container {
   font-size: 30px;
   margin: auto;
@@ -737,6 +744,7 @@ input.form-control.nav-bar-search {
   position: absolute;
   width: 250px;
   background-color: white;
+  z-index: 2;
 }
 
 .wrapped-search-results {
