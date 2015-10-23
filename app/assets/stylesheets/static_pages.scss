@@ -584,8 +584,8 @@ input.form-control.nav-bar-search {
 }
 
 .glyphicon-search {
-
-  border-radius: 19px;
+  margin-top: 15px;
+  margin-left: -12px;
 }
 
 .user-show-follow-btn {
@@ -737,4 +737,49 @@ input.form-control.nav-bar-search {
   position: absolute;
   width: 250px;
   background-color: white;
+}
+
+.wrapped-search-results {
+  border: solid 1px #eee;
+  border-radius: 3px;
+}
+
+.search-result-item {
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  background-color: #FFFFFF;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.search-result-item:hover {
+  background-color: #F2FFF9;
+  cursor: pointer;
+}
+
+.search-result-item.story{
+  margin-left: 10px;
+}
+
+.search-header {
+  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-bottom: solid 1px #eee;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.search-result-prof-image {
+  margin-right: 5px;
+}
+
+.glyphicon.glyphicon-tag {
+  margin-right: 5px;
+  margin-left: 5px;
+  color: gray;
 }

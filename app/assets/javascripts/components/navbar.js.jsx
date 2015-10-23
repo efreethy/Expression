@@ -59,11 +59,6 @@
       });
     },
 
-    handleResults: function (results) {
-      if (results.length > 0) {
-        this.setState({searchResults: results});
-      }
-    },
 
     render: function () {
 
@@ -86,13 +81,14 @@
           </ul>
 
           <ul className="nav navbar-nav navbar-right">
-          <SearchBar giveResultsToParent={this.handleResults} />
+          <SearchBar />
+          <li className="glyphicon glyphicon-search"></li>
               <li onClick={this.handleWriteStoryClick}><a href="javascript:void(0)">Write a Story</a></li>
 
             <li onClick={this.handleClickToProfile}><ProfileImage classProp={"nav-bar-prof-img"} width={35} height={35} imageUrl={this.state.result.prof_image_url}/></li>
 
             <li className="dropdown">
-              <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}<span className="caret"></span></a>
+              <a href="javascript:void(0)" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.state.username}<span className="caret"></span></a>
               <ul className="dropdown-menu">
                 <li onClick={this.handleClickToProfile} ><a href="javascript:void(0)">Profile</a></li>
                 <li role="separator" className="divider"></li>

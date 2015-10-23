@@ -9,6 +9,7 @@ end
 json.stories do
   json.array! @story_results do |story|
     json.id story.id
+    json.author_id story.author_id
     json.title story.title
     json.bannerImageUrl story.banner_image_url
   end

@@ -24,40 +24,57 @@
       }
     },
 
+    handleSearchClick: function () {
+      this.setState({queryText: ""});
+    },
+
     fetchSearchResults: function () {
       results = ApiUtil.fetchSearchResults(this.state.queryText);
     },
 
-    makeUserResults: function (results) {
+    makeResults: function (results) {
       var users = this.state.results.users.map(function (user) {
         return (
           <div>
-            <div>{user.username}</div>
+            <div onClick={this.handleSearchClick} className="search-result-item">
+            <ProfileImage classProp="search-result-prof-image" width={30} height={30} imageUrl={user.profImageUrl} />
+            <Link to={"users/"+user.id}>{user.username}</Link>
+            </div>
           </div>
         );
-      });
+      }.bind(this));
 
       var tags = this.state.results.tags.map(function (tag) {
+
         return (
           <div>
-            <div>{tag.name}</div>
+            <div onClick={this.handleSearchClick}className="search-result-item"><div className="glyphicon glyphicon-tag"></div>
+            <Link to={"tags/"+tag.id}>{tag.name}</Link>
+            </div>
           </div>
         );
-      });
+      }.bind(this));
 
       var stories = this.state.results.stories.map(function (story) {
+        var storyText;
+        if (story.title.length > 30) { storyText = (story.title.slice(0,30) + "..."); } else  {storyText = story.title;}
         return (
           <div>
-            <div>{story.title}</div>
+            <div onClick={this.handleSearchClick} className="search-result-item story">
+            <Link to={"users/"+story.author_id+ "/stories/"+story.id}>{storyText}</Link></div>
           </div>
         );
-      });
+      }.bind(this));
 
-      return (users.concat(tags).concat(stories));
+      var wrappedUsers = ([<div><div className="search-header">USERS</div>{users}</div>]);
+      var wrappedTags = ([<div><div className="search-header">TAGS</div>{tags}</div>]);
+      var wrappedStories = ([<div><div className="search-header">STORIES</div>{stories}</div>]);
+      var wrappedResults = [<div className="wrapped-search-results">{wrappedUsers.concat(wrappedStories).concat(wrappedTags)}</div>];
+      return (wrappedResults);
     },
 
     generateResults: function () {
-      var userResults = this.makeUserResults(this.state.results.user);
+      var userResults = this.makeResults(this.state.results.user);
       return userResults;
     },
 
@@ -76,7 +93,6 @@
               {<div className="search-results">{results}</div>}
           </div>
 
-          <button type="submit" className="btn btn-default glyphicon glyphicon-search"></button>
         </form></li>
       );
     }
