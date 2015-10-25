@@ -36,7 +36,7 @@
     makeResults: function (results) {
       var users = this.state.results.users.map(function (user, idx) {
         return (
-          <div key={idx}>
+          <div key={user.username}>
             <div onClick={this.handleSearchClick} className="search-result-item">
             <ProfileImage classProp="search-result-prof-image" width={30} height={30} imageUrl={user.profImageUrl} />
             <Link to={"users/"+user.id}>{user.username}</Link>
@@ -48,9 +48,8 @@
       var tags = this.state.results.tags.map(function (tag, idx) {
 
         return (
-          <div key={idx} >
+          <div key={tag.name} >
             <div onClick={this.handleSearchClick}className="search-result-item"><div className="glyphicon glyphicon-tag"></div>
-
             <Link to={"tags/"+tag.id}>{tag.name}</Link>
             </div>
           </div>
@@ -61,7 +60,7 @@
         var storyText;
         if (story.title.length > 30) { storyText = (story.title.slice(0,30) + "..."); } else  {storyText = story.title;}
         return (
-          <div key={idx}>
+          <div key={story.title}>
             <div onClick={this.handleSearchClick} className="search-result-item story">
             <Link to={"users/"+story.author_id+ "/stories/"+story.id}>{storyText}</Link></div>
           </div>

@@ -33,8 +33,9 @@ div.editable
 }
 
 .sign-in-text {
-  margin-left: 10px;
-  display: inline;
+  position: relative;
+  margin-left: 100px;
+  margin-top: 21px;
 }
 .sign-in-box {
   margin-top: 30px;
@@ -790,4 +791,49 @@ input.form-control.nav-bar-search {
   margin-right: 5px;
   margin-left: 5px;
   color: gray;
+}
+
+.flash {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.sign-in-button {
+    background-color: white;
+    float: left;
+    width: 85px;
+    color: #57ad68;
+    text-align: center;
+    top: 8px;
+    border: solid 1px;
+    border-color: #a9d8b2;
+    border-radius: 999em;;
+    margin-right: 5px;
+    font-weight: 200;
+    font-size: 15px;
+    border-radius: 999em;
+    padding-top: 5px;
+    height: 35px;
+}
+
+.guest-sign-in-btn {
+  font-weight: 200;
+    color: #0345AF;
+    background: white;
+    text-align: center;
+    top: 8px;
+    border-radius: 999em;;
+    margin-right: 5px;
+    font-size: 15px;
+    border-radius: 999em;
+    padding-top: 5px;
+    height: 35px;
+    margin-top: 10px;
+}
+
+.guest-sign-in-box {
+  margin-top: -10px;
+  padding-bottom: 10px;
+  text-align: center;
 }

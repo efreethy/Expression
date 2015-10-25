@@ -22,13 +22,13 @@ class UsersController < ApplicationController
   def create
 
     @user = User.new(user_params)
-    @user.prof_image_url = "https://res.cloudinary.com/efreezy/image/upload/v1445032760/scirx2tsadh1b8juywsg.jpg"
-    @user.all_followings = [User.find_by_username("Evan Freethy")] 
+    @user.prof_image_url = "http://res.cloudinary.com/efreezy/image/upload/v1445638630/green-fractal_ttu1dh.jpg"
+    @user.all_followings = [User.find_by_username("Evan Freethy")]
     if @user.save
       sign_in(@user)
       redirect_to root_path
     else
-      flash[:base] = @user.errors.full_messages
+      flash.now[:base] = @user.errors.full_messages
       render :new
     end
   end
