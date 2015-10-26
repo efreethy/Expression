@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get 'followings/destroy'
   end
 
-  root 'static_pages#home'
-  get '/static_pages/front', to: 'static_pages#front'
-  get '/static_pages/home', to: 'static_pages#home'
+  root 'pages#home'
+  get '/pages/front', to: 'pages#front'
+  get '/pages/home', to: 'pages#home'
 
   resources :users, only: [:new, :create, :show, :update, :edit]
   resource :session, only: [:new, :create, :destroy]
