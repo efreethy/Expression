@@ -1,0 +1,10 @@
+<div id="content"></div>
+
+<script type="text/javascript">
+    window.CURRENT_USER_ID = <%= current_user.try(:id) %> || -1;
+</script>
+
+
+<script type="text/javascript">
+    window.CURRENT_USER_NAME = '<%= current_user.try(:username) %>' || -1;
+</script>

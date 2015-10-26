@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get '/pages/front', to: 'pages#front'
-  get '/pages/home', to: 'pages#home'
 
   resources :users, only: [:new, :create, :show, :update, :edit]
   resource :session, only: [:new, :create, :destroy]
