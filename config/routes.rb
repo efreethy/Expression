@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   get '/static_pages/front', to: 'static_pages#front'
+  get '/static_pages/home', to: 'static_pages#home'
 
   resources :users, only: [:new, :create, :show, :update, :edit]
   resource :session, only: [:new, :create, :destroy]
