@@ -1,37 +1,37 @@
+<div class="container sign-in-page">
+    <div class="row">
+      <div class="col-xs-9 col-xs-offset-1 sign-in-box">
+        <div class='front-page-box-top'>
+          <img class='front-page-logo' src="http://res.cloudinary.com/efreezy/image/upload/v1445459339/expression-logo-2_krtzqz.png" alt="expression-logo" />
+        </div>
 
-<div class="row" >
-  <div class="col-xs-5 col-xs-offset-4 sign-in-box">
-    <div class='front-page-box-top'>
-      <img class='front-page-logo' src="http://res.cloudinary.com/efreezy/image/upload/v1445459339/expression-logo-2_krtzqz.png" alt="expression-logo" />
-    </div>
-
-    <h2>Sign In</h2>
+        <h2>Sign In</h2>
 
 
 
-    <form action="<%= session_url %>" method="post">
-      <%= auth_token %>
+        <form action="<%= session_url %>" method="post">
+          <%= auth_token %>
 
-      <div class="form-group">
-        <label>Username</label>
-        <input name="user[username]" type="text" class="form-control username" placeholder="Username">
+          <div class="form-group">
+            <label>Username</label>
+            <input name="user[username]" type="text" class="form-control username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input name="user[password]" type="password" class="form-control password" placeholder="Password">
+          </div>
+
+          <button type="submit" class="btn btn-success sign-in-button">Sign In</button>
+          <div class="sign-in-text">Not signed up? <a href='/users/new'>Make an account here!</a></div>
+        </form>
+
+        <div class="guest-sign-in-box">
+          <br/>
+          <button width="150" type="submit" class="btn btn-primary guest-sign-in-btn">Guest Sign In</button>
+        </div>
+
       </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input name="user[password]" type="password" class="form-control password" placeholder="Password">
-      </div>
 
-      <button type="submit" class="btn btn-success sign-in-button">Sign In</button>
-      <div class="sign-in-text">Not signed up? <a href='/users/new'>Make an account here!</a></div>
-    </form>
-
-    <div class="guest-sign-in-box">
-      <br/>
-      OR<br/>
-      <button width="150" type="submit" class="btn btn-primary guest-sign-in-btn">Guest Sign In</button>
-    </div>
-
-  </div>
 </div>
 
 <script>
@@ -41,3 +41,4 @@
       $('.sign-in-button').click();
     });
 </script>
+<div>

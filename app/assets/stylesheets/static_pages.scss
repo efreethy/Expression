@@ -4,8 +4,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  height: 100%;
+}
 a:link, a:active {
   text-decoration: none; color: #57ad68;
+}
+
+a:visited  {
+  color: #57ad68;
 }
 
 a {
@@ -35,16 +42,31 @@ div.editable
 .sign-in-text {
   position: relative;
   margin-left: 100px;
-  margin-top: 21px;
+  margin-top: 24px;
 }
 .sign-in-box {
   margin-top: 30px;
 }
+
 .sign-up-text {
-  margin-left: 10px;
-  display: inline;
+  margin-left: 20px;
+  margin-top: 22px;
+
 }
 
+.sign-in-page {
+  border: solid 1px #eee;
+  border-radius: 3px;
+  width: 500px;
+  background-color: #F2FFF9;
+}
+.sign-up-page {
+  border: solid 1px #eee;
+  border-radius: 3px;
+  width: 500px;
+  background-color: #F2FFF9;
+  padding-bottom: 20px;
+}
 .front-page-box-top {
   border-bottom: solid 2px #4B9B4F;
 }
@@ -268,8 +290,8 @@ div.story-content.write-here {
   margin-left: 15px;
   font-family: 'Lora', serif;
   font-size: 15px;
-  color: gray
-
+  color: gray;
+  cursor: pointer;
 }
 
 .story-index-item {
@@ -284,7 +306,8 @@ div.story-content.write-here {
 
 .story-index-item:hover {
   border: solid 3px #E8F7E9;
-    transition: .3s;
+  transition: .3s;
+  cursor: pointer;
 }
 .publish-tags-containter:before {
   content: "";
@@ -315,6 +338,7 @@ div.story-content.write-here {
   color: #009B0A;
   background-color: #EAF3EC;
   border: solid 1px #47BC76;
+  cursor: pointer;
 }
 
 .story-banner-image {
@@ -360,6 +384,7 @@ div.story-content.write-here {
 .story-publish-btn:hover {
     border-color: #57ad68;
     color: #468c54;
+    cursor: pointer;
 }
 .upload-img-btn {
     float: left;
@@ -382,6 +407,7 @@ div.story-content.write-here {
 div.upload-img-btn:hover {
     border-color: #000;
     color: #000;
+    cursor: pointer;
 }
 
 .edit-prof-img-container {
@@ -405,6 +431,7 @@ div.upload-img-btn:hover {
 
 .nav-bar-prof-img:hover {
   border: solid #57ad68 1px;
+  cursor: pointer;
 }
 
 .story-tags-container {
@@ -472,6 +499,7 @@ div.upload-img-btn:hover {
 .follow-btn:hover {
     border-color: #57ad68;
     color: #468c54;
+    cursor: pointer;
 }
 
 .follow-btn.followed {
@@ -480,6 +508,7 @@ div.upload-img-btn:hover {
 }
 
 .follow-btn.followed:hover {
+  cursor: pointer;
   background-color: white;
   color: #57ad68;
 }
@@ -658,6 +687,7 @@ input.form-control.nav-bar-search {
 }
 
 .glyphicon.glyphicon-heart:hover {
+  cursor: pointer;
   color: #57ad68;
 }
 
@@ -678,6 +708,7 @@ input.form-control.nav-bar-search {
 }
 
 .glyphicon.glyphicon-heart.flw-btn-is-recommended:hover {
+  cursor: pointer;
   color: #B1E2BA;
 }
 .top-story-item {
@@ -836,4 +867,48 @@ input.form-control.nav-bar-search {
   margin-top: -10px;
   padding-bottom: 10px;
   text-align: center;
+}
+
+.splash-page{
+ height: 1000px;
+ background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),url("http://static1.squarespace.com/static/502aa7dcc4aa79b74ade73c2/t/54331873e4b0dffb4bc75e86/1412634754709/instrument_edit.jpg?format=2500w");
+ background-position: center;
+ background-size: cover;
+}
+
+.splash-box {
+  width: 600px;
+  height: 300px;
+  margin: auto;
+}
+
+.splash-image {
+  width: 450px;
+  height: 100px;
+}
+.splash-words {
+ color: white;
+ font-weight: 100;
+ font-size: 24px;
+ letter-spacing: .03em;
+}
+.box {
+  color: white;
+  width: 375px;
+  margin: auto;
+}
+.git-hub-sign-in {
+  height: 100px;
+  width: 200px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.splash-sign-in{
+  color: white;
+  font-weight: 100;
+}
+
+.git-hub-text.github {
+  margin-left: 100px;
 }

@@ -3,10 +3,13 @@ class StaticPagesController < ApplicationController
 
   def ensure_logged_in
     unless signed_in?
-      redirect_to new_session_url
+      redirect_to static_pages_front_url
     end
   end
 
   def home
+  end
+
+  def front
   end
 end

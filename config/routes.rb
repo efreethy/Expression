@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   root 'static_pages#home'
+  get '/static_pages/front', to: 'static_pages#front'
 
   resources :users, only: [:new, :create, :show, :update, :edit]
   resource :session, only: [:new, :create, :destroy]

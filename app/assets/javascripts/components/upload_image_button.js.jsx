@@ -4,7 +4,6 @@
   root.UploadImageButton = React.createClass({
 
     componentDidMount: function () {
-      debugger;
       document.getElementById("upload_widget_opener").addEventListener("click", function() {
 
         cloudinary.openUploadWidget({ cloud_name: 'efreezy', upload_preset: 'stqteojc'},
