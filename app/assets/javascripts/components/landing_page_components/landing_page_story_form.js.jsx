@@ -19,7 +19,12 @@
 
 
    componentDidMount: function () {
+      StoryStore.addAuthorStoryShowChangeListener(this._onChange);
       var editor = new MediumEditor('.editable');
+    },
+
+    _onChange: function () {
+      this.history.pushState(null, 'users/' + CURRENT_USER_ID+'/stories/' +StoryStore.singleAuthorStory().id);
     },
 
     handlePublishClick: function () {

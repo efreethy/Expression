@@ -3,15 +3,18 @@ User.create!({username: "Evan Freethy", password: "thepassword",prof_image_url: 
 User.create!({username: "InVision", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445450790/inVision_tuujqn.png"})
 User.create!({username: "Chris Stang", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445447820/chris-stang_glgnpo.jpg"})
 User.create!({username: "Luks Piekut", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445449751/luks-piekut_ue7qwh.jpg"})
+User.create!({username: "The Academy", password: "thepassword",prof_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445911501/academy_vzaxac.jpg"})
 
 Tag.create!([
   {name: "Nasa"},
+  {name: "Google"},
   {name: "space"},
   {name: "technology"},
   {name: "wine"},
   {name: "food"},
   {name: "Augmented Reality"},
   {name: "Computer Vision"},
+  {name: "art"},
 ])
 
 
@@ -32,7 +35,8 @@ User.find_by_username("sparks").tag_subscriptions = [
   Tag.find_by_name("food"),
   Tag.find_by_name("wine"),
   Tag.find_by_name("technology"),
-  Tag.find_by_name("Augmented Reality")
+  Tag.find_by_name("Augmented Reality"),
+  Tag.find_by_name("Google")
 ]
 
 User.find_by_username("Chris Stang").stories.create!([
@@ -68,13 +72,33 @@ User.find_by_username("InVision").stories[0].all_users_who_recommend =
     [User.find_by_username("Chris Stang"),
       User.find_by_username("sparks"),  User.find_by_username("Luks Piekut")]
 
+User.find_by_username("The Academy").stories.create!([
+  {title: "Technology and The Evolution of Storytelling",
+   body: "<p>It is such an exciting time to be a filmmaker.</p><p>I do not believe the notion that the cinema is dying or dead because it’s amazing what technology can do to the cinematic storytelling.</p><p>What’s great about film is it constantly reinvents itself. It started as a sheer novelty, those images moving on the screen.</p><p>Then it went and every step of the way a new technology started being added — sound, color.</p><p>What happens is the film grammar of storytelling evolves and changes as well. The technology goes directly with the evolution of the storytelling.</p><p>The way films look —it started with old 35mm motion picture cameras, to color with the three-strip Technicolor, to cameras that weighed hundreds of pounds and had to be on dollies and cranes — that was the film grammar of the day.</p><blockquote><i>The limitations of the technology being used to shoot the films set up what we’ve learned as film grammar.</i></blockquote><p>Then, we came to lighter cameras, to handheld cameras, steady cams, and on and on, all the way down to now.</p><p>Very, very, <i>very</i> important: Do not work in a vacuum.</p><p>You have to surround yourself with trusted people. You get so immersed in your work, you will not be able to see the forest from the trees. Frankly, you’ll be studying the pine needles and worrying about them.</p><p>You need someone to help you back up and take a look at the forest and see where things are working or not working.</p><p>And you need to surround yourself with people whose judgment you trust and they can be brutally honest with you.</p>",
+   banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445911509/woody_mqvcbj.jpg"}
+])
+
+User.find_by_username("The Academy").all_followings = [
+  User.find_by_username("Evan Freethy"),
+  User.find_by_username("InVision"),
+  User.find_by_username("Luks Piekut")
+]
+
+User.find_by_username("The Academy").stories[0].tags = [Tag.find_by_name("technology"), Tag.find_by_name("art")]
+User.find_by_username("The Academy").stories[0].all_users_who_recommend =
+    [User.find_by_username("Chris Stang"),
+      User.find_by_username("sparks"),  User.find_by_username("Luks Piekut")]
+
 User.find_by_username("Evan Freethy").stories.create!([
   {title: "Augmented Reality - Beyond the First-Down Line",
    body: "<p>The military is using it to train their off-site troops. Medical Doctors are implementing it to visualize and resect tumors in practice. IKEA has adopted it to help customers see how furniture would look in their homes. Apple recently claimed several patents in an attempt to safeguard a stake in the sector, and Google is developing a mobile device that is tailored for it.</p><p><b>So, what exactly is 'it'? </b></p><p>Well, most generally, “it” is Augmented Reality, or AR for short. The term alone though provides little insight into the scale or scope of this technology. I have seen many applications for it so far, but for newcomers, the question remains: Why is it adding value across so many verticals, and why it is seeing such rapid growth (current projections peg the industry to be valued at nearly 2 billion dollars by 2015). As someone who works at Metaio to bring some of the most ambitious and complex AR projects to market, I spend a lot of time answering these questions for individuals who have high interest in augmented reality, but struggle understanding it in a broader context. In the coming weeks I intend to shed light on this topic via LinkedIn postings, providing a sort of ad hoc solution to an apparent demand for industry knowledge amongst the professionals in my network. Without further ado, here's the plain and simple about a technology that is currently finding its place in our world, and how we're quickly realizing that it’s place is everywhere.</p><p><b>Where do we see augmented reality?</b></p><p>For those of you who spend your Monday nights cheering (and sometimes criticizing) your favorite football teams, then augmented reality is all too familiar. The bold yellow line that commonly represents a first down is in fact augmented on top of the field, serving as a useful marker to compare with a team’s yardage. The line does not in fact exist in reality, but is digitally painted into the video feed, adding much a much appreciated visual representation of that invisible concept that is the “Down Line”. Augmented reality in sports is so useful, in fact, that it has become an industry standard for all professional and collegiate football games, and has since been adapted for enhanced viewing with other sports as well, such as basketball, tennis, and hockey to name a few.</p><p>Regardless of whether or not you watch sports, the principle behind the example is of importance here. Augmented reality technology lets you see important additions to reality in tandem with what you see naturally. It enhances your reality with digital content, and, to be frank, it’s damn useful. </p><p>AR software has reached a level of sophistication that demands the attention of some of the largest companies which exist today, not to mention the military. In terms of what information we can digitally paint into the real world, the technology has made it far beyond that yellow first down line. We can now take just about any information that exists in the digital world and place it as contextually relevant places in our real world. </p><p>And the kicker? All of this can be achieved with the smart phone in your pocket.</p><p>In the coming posts I will go in depth across the most relevant applications we are seeing with AR today, as well as provide useful examples, metrics, and information regarding its most recent areas of growth. So for now, stay tuned.</p>",
    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445451937/first-down-line_y65tb9.jpg"},
    {title: "NASA Makes a Move in Computer Vision",
     body: "<p>The moon landing, the Hubble Telescope, the International Space Station, and the Mars Rovers are but a fraction of NASA’s accomplishments since its inception in 1958. Today they continue a legacy of innovation and research in the aerospace setting, and most recently have moved their focus to the augmented reality and computer vision space. After a brief stint with google glass, they conducted an extensive survey of the possible platforms to test augmented reality applications with, and concluded on a company which has spent the last six years developing government and enterprise grade smart glasses, Osterhout Design Group, or ODG for short.</p><p><b>About ODG</b></p><p>ODG is a company firmly planted in the Augmented Reality hardware space. For the past six years they have been developing state of the art eye-wear for government and enterprise which projects digital information to the user from within the lenses themselves. What is most exciting about these shades is what they inherit from their military upbringings. HD stereoscopic dual displays, a Snapdragon™ 805 processor, 9-axis inertial measurement unit, and a high speed autofocus camera are but a few items on the long list of credentials for the specs, which happen to fairly light, weighing in at 125 grams.</p><p><b>So what?</b></p><p>Where these glasses truly shine is in their ability superimpose visually intuitive information and instructions to the user on top of complex physical systems. For NASA, this means astronauts will be able to perform procedures with precise visual guidance, reducing any potential errors or ambiguities that occur when referring to paper check lists.</p><p><br></p>",
-    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445636156/nasaODG_mpvxq6.png"}
+    banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445636156/nasaODG_mpvxq6.png"},
+    {title: "Google's Plan to Conquer Space and Motion",
+     body: "<p>In this post I will turn my attention to Google, taking a closer look at the multi-billion dollar company’s relationship with computer vision and augmented reality. My company, Metaio, integrates our software on every hardware platform we can get our hands on, and Google has been a huge enabler for pushing AR applications into the mainstream and getting the technology to you, the end user.</p><p><b>Glass </b></p><p>Google turned many heads with the introduction of the ‘Google Glass’, and despite mixed reviews, the project was a huge step forward in the adoption of head-worn augmented reality technologies. Metaio’s proprietary AR software has been made compatible for the device and will support virtually every type tracking we provide, from 2D all the way to 3D object tracking without the need of markers. Our main challenge with current glass models has been with our software straining the processors and battery life, however the next iteration will be more efficient in both of these areas. Many believe that ‘Google Glass’ was the full extent of Google’s relationship with augmented reality, but Google is forging the path of AR in other areas as well - some more ambitious than others.</p><p><b>Word Lens</b></p><p>In Spring of 2014 Google purchased the Augmented Reality company Quest Visual. This company is most notable for producing ‘Word Lens’ - an application that translates words and places them seamlessly on the page a user is reading, through the use of the mobile device’s camera feed. Google plans to integrate this software with the large language coverage they support via Google Translate - and have since added ‘Google Glass’ compatibility.</p><p><b>Project Tango</b></p><p>In another computer vision project that is arguably as ambitious as ‘Glass’, Google has developed a mobile device unlike anything of it’s kind.</p><p>'The goal of project Tango is to give mobile devices a human-scale understanding of space and motion.' - Johnny Lee, Project Tango Team</p><p>Their mission is to create a phone that is capable of sensing its surroundings - and it uses some pretty state of the art software to get the job done. Equipped with a depth sensing camera, the phone is capable of generating 3D maps of its surroundings while simultaneously tracking its position within a scene. What this means for augmented reality is that environments can be recognized and tracked with great accuracy and precision. Metaio has already commenced development on the platform, and will be ready to leverage the strengths of the platform when it reaches end users.</p><p>Mobile devices will undoubtedly reach higher and higher levels of sophistication in coming years, and when such devices hit mass market we will see an assortment of augmented reality applications follow suit. Although it is in it’s infancy, Project Tango has established potential to be an inflection point of innovation, as it puts forth the attitude that we should push the limits of what our mobile devices are capable of doing for us. Metaio will do it’s part to ensure that the best computer vision and augmented reality software is ready when this these kinds of ambitious hardware projects get into the hands of the wider audience.</p>",
+     banner_image_url: "http://res.cloudinary.com/efreezy/image/upload/v1445910747/google-motion_mqeeja.jpg"}
 ])
 User.find_by_username("Evan Freethy").stories[0].tags = [Tag.find_by_name("technology"), Tag.find_by_name("Augmented Reality"), Tag.find_by_name("Computer Vision")]
 User.find_by_username("Evan Freethy").stories[0].all_users_who_recommend =
@@ -85,3 +109,15 @@ User.find_by_username("Evan Freethy").stories[1].tags = [Tag.find_by_name("Nasa"
 User.find_by_username("Evan Freethy").stories[1].all_users_who_recommend =
     [User.find_by_username("Chris Stang"), User.find_by_username("InVision"),
       User.find_by_username("sparks"),  User.find_by_username("Luks Piekut")]
+
+User.find_by_username("Evan Freethy").stories[2].tags = [Tag.find_by_name("technology"), Tag.find_by_name("Google"), Tag.find_by_name("Computer Vision")]
+User.find_by_username("Evan Freethy").stories[2].all_users_who_recommend =
+    [User.find_by_username("Chris Stang"), User.find_by_username("InVision"),
+      User.find_by_username("sparks")]
+
+User.find_by_username("Evan Freethy").all_followings = [
+  User.find_by_username("The Academy"),
+  User.find_by_username("InVision"),
+  User.find_by_username("sparks"),
+  User.find_by_username("Luks Piekut")
+]

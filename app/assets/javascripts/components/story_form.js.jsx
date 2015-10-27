@@ -9,6 +9,7 @@
     },
 
     componentDidMount: function () {
+      StoryStore.addAuthorStoryShowChangeListener(this._onChange);
       var editor = new MediumEditor('.editable',{
         placeholder: {
           text: 'This is the placeholder text'
@@ -16,7 +17,9 @@
       });
     },
 
-
+    _onChange: function () {
+      this.history.pushState(null, 'users/' + CURRENT_USER_ID+'/stories/' +StoryStore.singleAuthorStory().id);
+    },
 
     handlePublishClick: function () {
       var postTitle = $('.post-title')[0].value;
@@ -25,7 +28,6 @@
       var bannerUrl = this.state.bannerImageUrl;
       if (postTitle !== "") {
         ApiUtil.createStory(postTitle, bodyHtml, tagsArray, bannerUrl, CURRENT_USER_ID);
-        this.history.pushState(null, '/');
       } else {
         this.setState({ storyFormError: true});
       }
