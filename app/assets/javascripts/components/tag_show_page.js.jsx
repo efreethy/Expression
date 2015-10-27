@@ -5,6 +5,11 @@
       return {tag: {name: "", stories: []}};
     },
 
+    componentWillReceiveProps: function (newProps) {
+      ApiUtil.fetchTag(newProps.routeParams.id);
+      TagStore.addTagShowChangeListener(this._onChange);
+    },
+
     componentDidMount: function () {
       ApiUtil.fetchTag(this.props.params.id);
       TagStore.addTagShowChangeListener(this._onChange);

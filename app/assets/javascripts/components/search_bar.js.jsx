@@ -1,6 +1,8 @@
 (function (root) {
 
   root.SearchBar = React.createClass({
+    mixins: [ReactRouter.History],
+
     getInitialState: function () {
       return {queryText: "", results: {users: [], stories: [], tags: []}};
     },
@@ -33,13 +35,29 @@
       results = ApiUtil.fetchSearchResults(this.state.queryText);
     },
 
+    handleClickToProfile: function (id) {
+      this.history.pushState(null, "users/"+ id);
+    },
+
+    handleClickToTagShow: function (id) {
+      this.history.pushState(null, "tags/"+ id);
+      this.forceUpdate();
+      this.setState({newPage: true});
+    },
+
+    handleClickToStoryShow: function (story_id, author_id) {
+      this.history.pushState(null, "users/"+ author_id + '/stories/'+story_id);
+      this.forceUpdate();
+    },
+
+
     makeResults: function (results) {
       var users = this.state.results.users.map(function (user, idx) {
         return (
           <div key={user.username}>
             <div onClick={this.handleSearchClick} className="search-result-item">
             <ProfileImage classProp="search-result-prof-image" width={30} height={30} imageUrl={user.profImageUrl} />
-            <Link to={"users/"+user.id}>{user.username}</Link>
+            <a onClick={this.handleClickToProfile.bind(this,user.id)}>{user.username}</a>
             </div>
           </div>
         );
@@ -50,7 +68,7 @@
         return (
           <div key={tag.name} >
             <div onClick={this.handleSearchClick}className="search-result-item"><div className="glyphicon glyphicon-tag"></div>
-            <Link to={"tags/"+tag.id}>{tag.name}</Link>
+              <a onClick={this.handleClickToTagShow.bind(this,tag.id)}>{tag.name}</a>
             </div>
           </div>
         );
@@ -62,7 +80,8 @@
         return (
           <div key={story.title}>
             <div onClick={this.handleSearchClick} className="search-result-item story">
-            <Link to={"users/"+story.author_id+ "/stories/"+story.id}>{storyText}</Link></div>
+            <a onClick={this.handleClickToStoryShow.bind(this,story.id,story.author_id)}>{storyText}</a>
+            </div>
           </div>
         );
       }.bind(this));
