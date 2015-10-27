@@ -10,11 +10,11 @@ Expression is a web application inspired by Medium built using Ruby on Rails
 and React.js. Expression allows users to:
 
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Create, read, Recommend stories
-- [ ] Tag Stories with multiple tags
-- [ ] Follow both Users and Tags
+- [x] Create an account
+- [x] Log in / Log out
+- [x] Create, Read, Recommend stories
+- [x] Tag Stories with multiple tags
+- [x] Follow both Users and Tags
 
 ## Design Docs
 * [View Wireframes][view]
