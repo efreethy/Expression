@@ -12,8 +12,7 @@ and React.js. Expression allows users to:
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, delete stories
-- [ ] Recommend, Bookmark, and Comment on stories.
+- [ ] Create, read, Recommend stories
 - [ ] Tag Stories with multiple tags
 - [ ] Follow both Users and Tags
 
