@@ -46,7 +46,7 @@
     },
 
     handleClickToStoryShow: function (story_id, author_id) {
-      this.history.pushState(null, "users/"+ author_id + '/stories/'+story_id);
+      this.history.pushState(null, "/users/"+ author_id + '/stories/'+story_id);
       this.forceUpdate();
     },
 
