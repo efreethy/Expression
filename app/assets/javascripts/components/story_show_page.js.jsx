@@ -17,10 +17,7 @@
       StoryStore.removeAuthorStoryShowChangeListener(this._onChange);
     },
 
-    componentWillReceiveProps: function (newProps) {
-      ApiUtil.fetchSingleStory(newProps.params.user_id, newProps.params.id);
-    },
-    
+
     componentDidMount: function () {
       if (this.state.story.bannerImageUrl !== undefined) {
         var bannerImageUrl = this.state.story.bannerImageUrl;
