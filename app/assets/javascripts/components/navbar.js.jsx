@@ -78,7 +78,7 @@
           <ul className="nav navbar-nav">
 
             <li ><Link to={`/`}>Home</Link></li>
-            <li ><Link to={"/users/" + CURRENT_USER_ID + "/favorites"}>Favorites</Link></li>
+
           </ul>
 
           <ul className="nav navbar-nav navbar-right">
@@ -106,3 +106,5 @@
     }
   });
 })(this);
+
+//            <li ><Link to={"/users/" + CURRENT_USER_ID + "/favorites"}>Favorites</Link></li>
