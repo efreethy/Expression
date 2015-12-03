@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :recommendations, only: [:create, :destroy]
     resources :stories, only: [:new]
     resources :users, only: [:new] do
+      resources :favorites, only: [:index]
       resources :stories, only: [:create, :show, :index] do
         resources :tags, only: [:create, :index]
       end

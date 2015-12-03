@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
     @user = User.new(user_params)
     @user.prof_image_url = "http://res.cloudinary.com/efreezy/image/upload/v1445638630/green-fractal_ttu1dh.jpg"
     @user.all_followings = [User.find_by_username("Evan Freethy")]

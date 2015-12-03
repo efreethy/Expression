@@ -25,11 +25,11 @@
             <div  className="tag-follow-sidebar">
               <TagFollowSidebar tags={this.props.tags}/>
               <FeaturedTagsSideitem tags={[
-                {name: "space", id: 2},
-                {name: "Augmented Reality", id: 6},
-                {name: "wine", id: 4},
-                {name: "food", id: 5},
-                {name: "Computer Vision", id: 7},
+                {name: "space", id: 3},
+                {name: "Augmented Reality", id: 7},
+                {name: "Nasa", id: 1},
+                {name: "food", id: 6},
+                {name: "Computer Vision", id: 8},
               ]}/>
               <TopStoriesSideitem />
             </div>

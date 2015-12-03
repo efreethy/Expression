@@ -3,6 +3,10 @@
   var _singleAuthorStory;
   var _topStories = [];
 
+  var _setFavoriteStories = function (stories) {
+    _favoriteStories = stories;
+  };
+
   var _resetAuthorStories = function (stories) {
     _authorStories = stories;
   };
@@ -26,6 +30,7 @@
   var AUTHOR_STORIES_INDEX_CHANGE_EVENT = 'authorStoriesIndexChange';
   var SINGLE_AUTHOR_STORY_CHANGE_EVENT = 'singleAuthorStoryChange';
   var TOP_STORY_CHANGE_EVENT = 'topStoryChangeEvent';
+  var FAVORITE_STORIES_CHANGE_EVENT = 'favoriteStoriesChangeEvent';
 
   root.StoryStore = $.extend({}, EventEmitter.prototype, {
     addAuthorStoriesIndexChangeListener: function (cb) {
@@ -34,6 +39,14 @@
 
     removeAuthorStoriesIndexChangeListener: function (cb) {
       StoryStore.removeListener(AUTHOR_STORIES_INDEX_CHANGE_EVENT, cb);
+    },
+
+    addFavoriteStoriesIndexChangeListener: function (cb) {
+      StoryStore.on(FAVORITE_STORIES_CHANGE_EVENT, cb);
+    },
+
+    removeFavoriteStoriesIndexChangeListener: function (cb) {
+      StoryStore.removeListener(FAVORITE_STORIES_CHANGE_EVENT, cb);
     },
 
     addAuthorStoryShowChangeListener: function (cb) {
@@ -54,6 +67,10 @@
 
     allAuthorStories: function(){
       return _authorStories.slice(0);
+    },
+
+    allFavoriteStories: function(){
+      return _favoriteStories.slice(0);
     },
 
     singleAuthorStory: function () {
@@ -81,6 +98,10 @@
        case StoryConstants.TOP_STORIES_RECEIVED:
        _setTopStories(payload.data);
        StoryStore.emit(TOP_STORY_CHANGE_EVENT);
+       break;
+       case StoryConstants.NEW_FAVORITE_STORIES_RECEIVED:
+       _setFavoriteStories(payload.data);
+       StoryStore.emit(FAVORITE_STORIES_CHANGE_EVENT);
        break;
      }
    })

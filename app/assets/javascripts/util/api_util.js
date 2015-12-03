@@ -184,5 +184,17 @@ var ApiUtil = {
         ApiActions.receiveNewRecommenders(newRecommenders);
       }
     });
+  },
+
+  fetchUserFavorites: function (user_id) {
+    $.ajax({
+      url: "/api/users/" + user_id + "/favorites",
+      method: 'GET',
+      dataType: 'JSON',
+      data: {user: { user_id: user_id } },
+      success: function (favoriteStories) {
+        ApiActions.receiveNewUserFavorites(favoriteStories);
+      }
+    });
   }
 };

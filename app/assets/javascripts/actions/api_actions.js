@@ -67,5 +67,14 @@ var ApiActions = {
      actionType: StoryConstants.NEW_RECOMMENDERS_RECEIVED,
      data: newRecommenders
    });
- }
+ },
+
+ receiveNewUserFavorites: function (favoriteStories) {
+   AppDispatcher.dispatch({
+     actionType: StoryConstants.NEW_FAVORITE_STORIES_RECEIVED,
+     data: favoriteStories
+   });
+ },
+
+
 };

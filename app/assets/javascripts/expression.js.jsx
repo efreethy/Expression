@@ -22,6 +22,7 @@ $(function () {
           <Route path="users/:id" component={UserPage}></Route>
           <Route path="users/:id/edit" component={UserEditPage}></Route>
           <Route path="users/:user_id/stories/:id" component={StoryShowPage}></Route>
+          <Route path="users/:user_id/favorites" component={FavoriteIndexPage}></Route>
           <Route path="stories/new" component={StoryForm}></Route>
           <Route path="tags/:id" component={TagsShowPage}></Route>
 

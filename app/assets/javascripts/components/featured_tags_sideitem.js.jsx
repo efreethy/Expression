@@ -4,8 +4,10 @@
 
     _generateFeaturedTagItems: function () {
       var tags = this.props.tags.map(function (tag) {
+
         return (
-          <TagItem key={tag.id} tag={tag} />
+
+          <TagItem key={tag.name} tag={tag} />
         );
       });
       return tags;
